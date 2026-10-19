@@ -1,0 +1,41 @@
+{
+  "name": "Nodeinfra",
+  "kind": "SI",
+  "typeDetail": "System integrator / infra",
+  "region": "APAC",
+  "regionDetail": "South Korea",
+  "segments": [
+    "Institutional",
+    "Infrastructure & nodes"
+  ],
+  "segmentBasis": "Tokenized deposit, stablecoin and MMF demos; approved NaaS provider",
+  "tier": "Active",
+  "status": "Demos delivered",
+  "roles": "Approved NaaS validator provider; public canton-tta test harness repo; offers Canton Zenith rollups",
+  "strengths": "Validator operations, private synchronizers, rollup infrastructure",
+  "credibility": "Official Polygon Labs RaaS partner in Korea; runs Korbit's L2 infra",
+  "openQuestions": "Which network were demos on, and for which clients?",
+  "sources": [
+    "https://canton.foundation/validators/",
+    "https://github.com/nodeinfra/canton-tta",
+    "https://nodeinfra.com/services/rollup"
+  ],
+  "projects": [
+    {
+      "name": "Tokenized deposit demo",
+      "stage": "Delivered demo / POC"
+    },
+    {
+      "name": "Stablecoin demo",
+      "stage": "Delivered demo / POC"
+    },
+    {
+      "name": "MMF tokenization platform",
+      "stage": "Delivered demo / POC"
+    },
+    {
+      "name": "Private synchronizer (NodeSTO)",
+      "stage": "Delivered demo / POC"
+    }
+  ]
+}

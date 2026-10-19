@@ -1,0 +1,30 @@
+{
+  "name": "IntellectEU",
+  "kind": "SI",
+  "typeDetail": "System integrator",
+  "region": "Europe",
+  "regionDetail": "Europe / Global",
+  "segments": [
+    "Institutional",
+    "Infrastructure & nodes"
+  ],
+  "segmentBasis": "Catalyst suite for institutional payments and digital assets; approved NaaS provider",
+  "tier": "Core",
+  "status": "Deployed on Mainnet",
+  "roles": "Super Validator; Premier Foundation member; Head of Product on the CF board; approved NaaS validator provider; Dev Fund grantee (milestones reviewed by DevRel)",
+  "firstActivity": "Founding-era Premier member and SV (exact start not recorded)",
+  "strengths": "Institutional payments and integration layer; Canton-native product suite",
+  "credibility": "Established financial-services SI",
+  "openQuestions": "Name the MainNet projects and clients",
+  "sources": [
+    "https://canton.foundation/about-the-foundation/",
+    "https://canton.foundation/validators/"
+  ],
+  "projects": [
+    {
+      "name": "(project not named in sheet)",
+      "stage": "Live / Mainnet",
+      "notes": "Add named projects"
+    }
+  ]
+}

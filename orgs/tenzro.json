@@ -1,0 +1,37 @@
+{
+  "name": "Tenzro",
+  "kind": "Dev studio",
+  "typeDetail": "Dev studio / AI infra",
+  "region": "Not recorded",
+  "segments": [
+    "DeFi & retail"
+  ],
+  "segmentBasis": "AI trading and RWA apps; not a Foundation member",
+  "tier": "Active",
+  "status": "2 Mainnet (per sheet)",
+  "roles": "Not found in Foundation member, SV or NaaS lists. Publishes a Canton adapter (JSON Ledger API v2), Canton MCP server, and a wallet with Canton/Daml support on its own multi-VM chain",
+  "firstActivity": "Not determinable from public sources",
+  "strengths": "AI agents, multi-chain settlement, Canton tooling",
+  "credibility": "Runs its own L1 (Tenzro Network, TNZO token)",
+  "openQuestions": "Stage vs notes conflict on Boli/Rivier; verify on Scan; not a Foundation member",
+  "sources": [
+    "https://www.tenzro.com/docs/canton",
+    "https://github.com/tenzro/tenzro-wallet"
+  ],
+  "projects": [
+    {
+      "name": "Boli Platform (RWA)",
+      "stage": "Live / Mainnet",
+      "timeline": "Q1 2026",
+      "description": "Real World Asset tokenization platform",
+      "check": "stage says Mainnet but note says 'Preparing mainnet deployment'. Verify."
+    },
+    {
+      "name": "Rivier Platform (AI Trading)",
+      "stage": "Live / Mainnet",
+      "timeline": "Q1 2026",
+      "description": "Agentic / AI-powered trading platform",
+      "check": "stage says Mainnet but note says 'Preparing mainnet deployment'. Verify."
+    }
+  ]
+}

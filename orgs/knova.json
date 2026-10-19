@@ -1,0 +1,16 @@
+{
+  "name": "Knova",
+  "kind": "SI",
+  "typeDetail": "System integrator",
+  "region": "Americas",
+  "regionDetail": "USA",
+  "segments": [
+    "Institutional"
+  ],
+  "segmentBasis": "Works only with FIs and institutions (per sheet)",
+  "tier": "Pipeline",
+  "status": "Not engaged in sheet",
+  "openQuestions": "Focus: FIs and institutions (no startups), per sheet",
+  "sources": [],
+  "projects": []
+}

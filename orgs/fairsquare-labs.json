@@ -1,0 +1,24 @@
+{
+  "name": "Fairsquare Labs",
+  "kind": "SI",
+  "typeDetail": "System integrator",
+  "region": "APAC",
+  "regionDetail": "South Korea",
+  "segments": [
+    "Institutional"
+  ],
+  "segmentBasis": "Security-token platforms for Korean brokers and market infrastructure",
+  "tier": "Early",
+  "status": "Exploring private synchronizer for Canton; no live projects",
+  "roles": "Website lists Digital Asset among global partners; nothing live on Canton",
+  "strengths": "Security-token infrastructure, MPC wallets, work with Korean market infrastructure",
+  "credibility": "Built Hanwha Investment & Securities' tokenized securities platform; Progmat + KDAC MOU (Feb 2025); works with KSD and KRX consortium; Series A US$7M (2022)",
+  "openQuestions": "Hanwha reportedly uses Canton for settlement; is Fairsquare involved?",
+  "sources": [
+    "https://www.fairsquarelab.com/",
+    "https://www.techtimes.com/articles/326919/20260907/hanwha-bets-three-blockchain-rails-own-korea-tokenized-securities.htm",
+    "https://app.dealroom.co/companies/fairsquarelab"
+  ],
+  "projects": [
+  ]
+}

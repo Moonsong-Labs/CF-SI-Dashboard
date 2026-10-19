@@ -1,0 +1,39 @@
+{
+  "name": "AngelHack",
+  "kind": "Dev studio",
+  "typeDetail": "Developer education + dev studio",
+  "region": "Global",
+  "regionDetail": "Global (APAC-heavy)",
+  "segments": [
+    "Developer education",
+    "DeFi & retail"
+  ],
+  "segmentBasis": "Canton Core Academy and hackathons; building Kairo RFQ DEX and Sanctum",
+  "tier": "Core",
+  "status": "1 live, 1 testnet",
+  "roles": "Super Validator; General Foundation member; ran Canton Core Academy, Canton Construct ideathon (Nov 2025) and Canton Catalyst 2026 showcase (Mar 2026)",
+  "firstActivity": "Sep 2025 (Canton Core Academy launch)",
+  "strengths": "Developer funnel at scale: education, hackathons, incubation; now also building apps",
+  "credibility": "Founded 2011; reports 25,000+ developers through the Canton Academy programme",
+  "openQuestions": "Refresh Kairo/Sanctum status (March targets); is 'AHA' on the Expansion tab the same org?",
+  "sources": [
+    "https://www.canton.network/blog/angelhack-launches-canton-core-academy",
+    "https://angelhack.com/case-studies/service/developer-quests/"
+  ],
+  "projects": [
+    {
+      "name": "Kairo",
+      "stage": "Live / Mainnet",
+      "timeline": "Open Beta - Mid March",
+      "description": "RFQ DEX",
+      "notes": "Timeline is from March; refresh status"
+    },
+    {
+      "name": "Sanctum",
+      "stage": "Testnet",
+      "timeline": "Mainnet - March",
+      "description": "Tokenisation platform",
+      "notes": "Mainnet target (March) has passed; confirm whether it launched"
+    }
+  ]
+}

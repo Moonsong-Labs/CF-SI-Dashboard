@@ -1,0 +1,40 @@
+{
+  "name": "HydraX",
+  "kind": "SI",
+  "typeDetail": "Regulated market infra + integrator",
+  "region": "APAC",
+  "regionDetail": "Singapore / SE Asia",
+  "segments": [
+    "Institutional",
+    "Infrastructure & nodes"
+  ],
+  "segmentBasis": "MAS-regulated; bank and exchange pipeline; approved NaaS provider",
+  "tier": "Core",
+  "status": "3 live",
+  "roles": "Approved NaaS validator provider; launched Sigma Value Token, first tokenised structured product on Canton (Apr 2025); Canton Buildcast Ep. 6 (May 2025); HX Gateway API (Jul 2026)",
+  "firstActivity": "Apr 2025 (Sigma Value Token launch)",
+  "strengths": "Licensed broker, exchange and custodian; REST API that removes the need for Daml expertise; bank pipeline across SE Asia",
+  "credibility": "MAS-regulated; reports >US$100M tokenised on Canton via DA Registry",
+  "openQuestions": "Q1/Q2 2026 timelines have passed; TDCC overlaps the TDCC x Nomura POC",
+  "sources": [
+    "https://www.canton.network/news/hydra-x-launches-the-sigma-value-token-on-the-canton-network",
+    "https://macaubusiness.com/hydra-x-launches-hx-gateway-api-to-advance-institutional-adoption-on-the-canton-network/"
+  ],
+  "projects": [
+    {
+      "name": "SDAX (Singapore digital asset exchange)",
+      "stage": "Live / Mainnet",
+      "timeline": "Q2 2026"
+    },
+    {
+      "name": "EXN (Labuan crypto brokerage)",
+      "stage": "Live / Mainnet",
+      "timeline": "Q2 2026"
+    },
+    {
+      "name": "Jadaex (Malaysia digital assets custodian)",
+      "stage": "Live / Mainnet",
+      "timeline": "Q2 2026"
+    }
+  ]
+}

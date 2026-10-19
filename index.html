@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="dark">
+  <title>Canton Foundation</title>
+  <link rel="icon" type="image/svg+xml" href="/CF-SI-Dashboard/Canton1.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --yellow: #F3FF97;
+  --black: #030206;
+  --white: #FFFFFC;
+  --lilac: #D5A5E3;
+  --purple: #875CFF;
+  --taupe: #A89F91;
+  --glass: rgba(255, 255, 252, 0.035);
+  --glass-strong: rgba(255, 255, 252, 0.06);
+  --glass-edge: rgba(255, 255, 252, 0.09);
+  --line: rgba(255, 255, 252, 0.08);
+  --line-strong: rgba(255, 255, 252, 0.22);
+  --blur: blur(22px) saturate(140%);
+  --font: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --logo-h: 80px;
+  --nav-logo-h: 44px;
+  --logo-clear: 48px;
+  --max: 1360px;
+  --gutter: 40px;
+  --r-panel: 18px;
+  --r-ctl: 10px;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--black); scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: transparent;
+  position: relative;
+  overflow-x: hidden;
+} body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(60vw 46vh at 62% 30%, rgba(135, 92, 255, 0.26), rgba(135, 92, 255, 0) 70%),
+    radial-gradient(42vw 40vh at 8% 92%, rgba(213, 165, 227, 0.12), rgba(213, 165, 227, 0) 70%),
+    radial-gradient(36vw 30vh at 96% 96%, rgba(168, 159, 145, 0.10), rgba(168, 159, 145, 0) 70%),
+    linear-gradient(180deg, var(--black) 0%, var(--black) 100%);
+}
+h1, h2, h3, h4 { margin: 0; line-height: 1; font-weight: 500; }
+p { margin: 0; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+[hidden] { display: none !important; }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--white); color: var(--black); padding: 10px 14px; z-index: 50; }
+.skip:focus { left: 8px; }
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--r-panel);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 252, 0.05);
+}
+.link {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.link:hover { text-decoration-color: var(--white); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 44px; padding: 0 20px;
+  border: 1px solid var(--line-strong); border-radius: var(--r-ctl);
+  background: var(--glass); color: var(--white);
+  -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur);
+  font-size: 15px; font-weight: 500; text-decoration: none; cursor: pointer;
+}
+.btn:hover { border-color: rgba(255, 255, 252, 0.5); background: var(--glass-strong); }
+.btn--primary { background: var(--yellow); border-color: var(--yellow); color: var(--black); }
+.btn--primary:hover { background: var(--yellow); border-color: var(--yellow); filter: brightness(0.93); }
+.nav {
+  position: sticky; top: 0; z-index: 15;
+  background: rgba(3, 2, 6, 0.72);
+  -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur);
+  border-bottom: 1px solid var(--line);
+}
+.nav__inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.nav__brand { display: flex; align-items: center; gap: 16px; text-decoration: none; color: var(--white); min-width: 0; }
+.logo { height: var(--nav-logo-h); width: auto; display: block; }
+.nav__product { font-size: 15px; font-weight: 500; padding-left: 16px; border-left: 1px solid var(--line-strong); line-height: 1; }
+.nav__product:first-child { border-left: 0; padding-left: 0; }
+.nav__links { display: flex; align-items: center; gap: 28px; }
+.nav__link { background: none; border: 0; padding: 0; cursor: pointer; font-size: 14px; color: var(--taupe); }
+.nav__link:hover { color: var(--white); }
+.btn--sm { height: 38px; padding: 0 16px; font-size: 14px; }
+.mast { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.mast__title { padding: 72px 0 44px; border-bottom: 1px solid var(--line); }
+.mast h1 { font-size: clamp(36px, 4.6vw, 60px); font-weight: 700; letter-spacing: 0; }
+.lede { margin-top: 18px; font-size: 18px; line-height: 1.35; color: var(--taupe); max-width: 70ch; }
+.page { max-width: var(--max); margin: 0 auto; padding: 28px var(--gutter) 80px; display: grid; grid-template-columns: 252px minmax(0, 1fr); gap: 24px; align-items: start; }
+.side__inner { position: sticky; top: 20px; display: grid; gap: 24px; padding: 22px 20px; }
+.search { position: relative; }
+.search input {
+  width: 100%; height: 42px;
+  background: rgba(3, 2, 6, 0.5); color: var(--white);
+  border: 1px solid var(--line); border-radius: var(--r-ctl);
+  padding: 0 12px 0 36px; font: inherit; font-size: 15px;
+}
+.search input::placeholder { color: var(--taupe); }
+.search input:focus { outline: none; border-color: var(--line-strong); }
+.search svg { position: absolute; left: 12px; top: 13px; width: 16px; height: 16px; stroke: var(--taupe); fill: none; stroke-width: 1.5; }
+.group { border: 0; margin: 0; padding: 0; min-width: 0; }
+.group legend { padding: 0; margin-bottom: 8px; font-size: 13px; font-weight: 600; color: var(--white); }
+.opt { display: grid; grid-template-columns: 16px 1fr auto; align-items: center; gap: 10px; padding: 6px 8px; margin: 0 -8px; border-radius: 8px; cursor: pointer; font-size: 14px; color: var(--taupe); }
+.opt:hover { color: var(--white); background: rgba(255, 255, 252, 0.04); }
+.opt input {
+  appearance: none; -webkit-appearance: none; margin: 0;
+  width: 14px; height: 14px; border: 1px solid var(--line-strong); border-radius: 4px; background: transparent; cursor: pointer;
+}
+.opt input[type=radio] { border-radius: 50%; }
+.opt input:checked { background: var(--white); border-color: var(--white); box-shadow: inset 0 0 0 3px var(--black); }
+.opt input:checked ~ span { color: var(--white); }
+.opt .n { font-size: 12px; font-variant-numeric: tabular-nums; color: var(--taupe); }
+.side__foot { display: grid; gap: 12px; justify-items: start; border-top: 1px solid var(--line); padding-top: 18px; font-size: 14px; }
+.filters-toggle { display: none; }
+.main { min-width: 0; padding: 8px 8px 4px; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 10px 12px 14px; }
+.views { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; border-radius: 999px; background: rgba(3, 2, 6, 0.45); border: 1px solid var(--line); }
+.views button {
+  background: none; border: 0; cursor: pointer;
+  padding: 8px 14px; border-radius: 999px;
+  color: var(--taupe); font-size: 14px;
+}
+.views button:hover { color: var(--white); }
+.views button[aria-pressed="true"] { color: var(--white); background: rgba(255, 255, 252, 0.10); }
+.views .n { margin-left: 8px; font-size: 12px; font-variant-numeric: tabular-nums; color: var(--taupe); }
+.meta { display: flex; align-items: baseline; gap: 20px; font-size: 14px; color: var(--taupe); }
+
+.cols, .row { display: grid; grid-template-columns: minmax(180px, 1.15fr) minmax(170px, 1fr) minmax(320px, 1.55fr); gap: 32px; align-items: center; }
+.cols { padding: 12px 20px; font-size: 12.5px; color: var(--taupe); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.cols .stations { display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; }
+
+.list { list-style: none; margin: 0; padding: 0; }
+.list li + li { border-top: 1px solid var(--line); }
+.row {
+  width: 100%; text-align: left; cursor: pointer;
+  background: none; border: 0; border-radius: 12px;
+  padding: 20px;
+}
+.row:hover { background: rgba(255, 255, 252, 0.04); }
+.org__name { display: block; font-size: 17px; font-weight: 500; color: var(--white); }
+.org__meta { display: block; margin-top: 6px; font-size: 13px; color: var(--taupe); }
+.cats { display: grid; gap: 6px; font-size: 14px; color: var(--white); }
+.cat { display: flex; align-items: center; gap: 10px; }
+.cat::before { content: ""; width: 8px; height: 8px; flex: none; border-radius: 2px; background: var(--c); }
+.cat--Institutional { --c: var(--purple); }
+.cat--DeFi { --c: var(--lilac); }
+.cat--Infra { --c: var(--taupe); }
+.cat--Edu { --c: transparent; }
+.cat--Edu::before { box-shadow: inset 0 0 0 1px var(--white); }
+.cat--none { color: var(--taupe); }
+.cat--none::before { display: none; }
+.rail { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); min-height: 38px; }
+.rail::before, .rail::after { content: ""; position: absolute; top: 6px; height: 1px; left: calc(100% / 6); }
+.rail::before { right: calc(100% / 6); background: var(--line-strong); }
+.rail::after { width: calc(var(--reach, 0) * 100% / 3); background: linear-gradient(90deg, rgba(255, 255, 252, 0.45), var(--white)); }
+.st { position: relative; display: grid; justify-items: center; align-content: start; gap: 8px; z-index: 1; }
+.st i { width: 13px; height: 13px; display: block; border-radius: 50%; background: var(--black); box-shadow: inset 0 0 0 1px var(--line-strong); }
+.st.on i { background: var(--white); box-shadow: 0 0 0 4px rgba(255, 255, 252, 0.08); }
+.st.live i { background: var(--yellow); box-shadow: 0 0 0 4px rgba(243, 255, 151, 0.12), 0 0 14px rgba(243, 255, 151, 0.35); }
+.st b { font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; color: var(--white); min-height: 13px; line-height: 1; }
+.st.live b { color: var(--yellow); }
+.st em { display: none; font-style: normal; font-size: 11px; color: var(--taupe); }
+.empty { padding: 48px 20px; color: var(--taupe); font-size: 16px; }
+.foot { max-width: var(--max); margin: 0 auto; padding: 8px var(--gutter) 56px; color: var(--taupe); font-size: 13px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; }
+.scrim { position: fixed; inset: 0; background: rgba(3, 2, 6, 0.55); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); z-index: 20; }
+.drawer {
+  position: fixed; top: 12px; right: 12px; bottom: 12px; z-index: 30;
+  width: min(640px, calc(100% - 24px)); overflow-y: auto;
+  background:
+    radial-gradient(420px 260px at 100% 0%, rgba(135, 92, 255, 0.16), rgba(135, 92, 255, 0) 70%),
+    rgba(3, 2, 6, 0.78);
+  -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-edge); border-radius: var(--r-panel);
+  padding: 32px 40px 44px;
+}
+.drawer__close { position: absolute; top: 24px; right: 24px; height: 38px; }
+.d-kicker { font-size: 13px; color: var(--taupe); padding-right: 90px; }
+.d-title { font-size: 40px; font-weight: 500; margin-top: 14px; padding-right: 90px; }
+.d-status { margin-top: 14px; color: var(--taupe); font-size: 15px; line-height: 1.35; }
+.d-facts { display: grid; grid-template-columns: repeat(3, 1fr); margin: 28px 0 0; overflow: hidden; }
+.d-facts div { padding: 16px 18px; border-left: 1px solid var(--line); }
+.d-facts div:first-child { border-left: 0; }
+.d-facts dt { font-size: 12px; color: var(--taupe); }
+.d-facts dd { margin: 8px 0 0; font-size: 15px; font-weight: 500; }
+.d-rail { margin-top: 28px; padding: 20px 8px 14px; }
+.d-rail .st em { display: block; }
+.d-sec { margin-top: 34px; }
+.d-sec h3 { font-size: 13px; font-weight: 600; color: var(--taupe); margin-bottom: 14px; }
+.d-sec p { font-size: 15px; line-height: 1.4; max-width: 62ch; }
+.d-sec p + p { margin-top: 8px; }
+.d-sec .soft { color: var(--taupe); }
+.proj-list { list-style: none; margin: 0; padding: 0; }
+.proj-list li { display: grid; grid-template-columns: 104px 1fr; gap: 20px; padding: 14px 0; border-top: 1px solid var(--line); }
+.proj-list li:last-child { border-bottom: 1px solid var(--line); }
+.proj-stage { font-size: 13px; color: var(--taupe); padding-top: 2px; }
+.proj-stage.live { color: var(--yellow); }
+.proj-name { font-size: 15px; font-weight: 500; }
+.proj-more { margin-top: 6px; font-size: 14px; color: var(--taupe); line-height: 1.35; }
+.check { margin-top: 8px; font-size: 13px; color: var(--lilac); line-height: 1.35; }
+.sources { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.sources a { font-size: 14px; overflow-wrap: anywhere; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px; }
+.sources a:hover { text-decoration-color: var(--white); }
+dialog {
+  color: var(--white);
+  background:
+    radial-gradient(520px 300px at 0% 0%, rgba(135, 92, 255, 0.14), rgba(135, 92, 255, 0) 70%),
+    rgba(3, 2, 6, 0.82);
+  -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-edge); border-radius: var(--r-panel); padding: 0;
+}
+dialog::backdrop { background: rgba(3, 2, 6, 0.6); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.legend { width: min(620px, calc(100% - 24px)); padding: 36px 40px 32px; }
+.legend h2 { font-size: 28px; font-weight: 500; margin-bottom: 8px; }
+.legend h3 { font-size: 13px; font-weight: 600; color: var(--taupe); margin: 28px 0 12px; }
+.legend dl { display: grid; grid-template-columns: 120px 1fr; gap: 10px 20px; margin: 0; }
+.legend dt { font-size: 14px; font-weight: 500; }
+.legend dd { margin: 0; font-size: 14px; color: var(--taupe); line-height: 1.35; }
+.legend p { font-size: 14px; color: var(--taupe); line-height: 1.35; }
+.legend form { margin-top: 28px; }
+.add { width: min(760px, calc(100% - 24px)); max-height: calc(100% - 24px); }
+.add__head { position: sticky; top: 0; z-index: 2; background: rgba(3, 2, 6, 0.88); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); border-bottom: 1px solid var(--line); padding: 28px 36px 20px; display: flex; justify-content: space-between; gap: 24px; align-items: start; }
+.add__head h2 { font-size: 28px; font-weight: 500; }
+.add__head p { margin-top: 10px; font-size: 14px; color: var(--taupe); line-height: 1.35; max-width: 56ch; }
+.add__body { padding: 4px 36px 32px; }
+.add fieldset { border: 0; margin: 28px 0 0; padding: 0; min-width: 0; }
+.add legend { font-size: 13px; font-weight: 600; color: var(--taupe); margin-bottom: 14px; padding: 0; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 24px; }
+.f { display: grid; gap: 8px; align-content: start; }
+.f--wide { grid-column: 1 / -1; }
+.f > span { font-size: 14px; font-weight: 500; }
+.f > span i { font-style: normal; font-weight: 400; color: var(--taupe); }
+.f small { font-size: 13px; color: var(--taupe); line-height: 1.3; }
+.add input[type=text], .add input[type=month], .add select, .add textarea {
+  width: 100%; font: inherit; font-size: 15px; color: var(--white);
+  background: rgba(255, 255, 252, 0.03); border: 1px solid var(--line-strong); border-radius: var(--r-ctl);
+  padding: 0 12px; height: 44px;
+} .add select option { background: var(--black); color: var(--white); }
+.add textarea { height: auto; min-height: 80px; padding: 10px 12px; resize: vertical; line-height: 1.3; }
+.add input:focus, .add select:focus, .add textarea:focus { outline: none; border-color: var(--white); }
+.add input::placeholder, .add textarea::placeholder { color: rgba(168, 159, 145, 0.75); }
+.add input[type=month]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: 0.6; }
+.checks { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+.checks label { display: flex; gap: 10px; align-items: center; font-size: 15px; cursor: pointer; }
+.checks input { appearance: none; -webkit-appearance: none; width: 16px; height: 16px; margin: 0; border: 1px solid var(--line-strong); border-radius: 4px; cursor: pointer; }
+.checks input:checked { background: var(--white); border-color: var(--white); box-shadow: inset 0 0 0 3px var(--black); }
+.proj { border-top: 1px solid var(--line); padding: 18px 0 6px; }
+.proj__top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+.proj__top strong { font-size: 14px; font-weight: 500; }
+.add .err { margin-top: 24px; border-left: 2px solid var(--lilac); padding: 4px 0 4px 16px; font-size: 14px; line-height: 1.4; }
+.add .err ul { margin: 6px 0 0; padding-left: 18px; color: var(--taupe); }
+.add__foot { position: sticky; bottom: 0; background: rgba(3, 2, 6, 0.88); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); border-top: 1px solid var(--line); padding: 16px 36px; display: flex; justify-content: flex-end; align-items: center; gap: 24px; }
+.done { padding: 28px 36px 36px; }
+.done h3 { font-size: 22px; font-weight: 500; margin-bottom: 16px; }
+.done ol { margin: 0; padding-left: 20px; line-height: 1.5; color: var(--taupe); }
+.done ol strong { color: var(--white); font-weight: 500; }
+.done code { color: var(--white); }
+.done .actions { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin-top: 24px; }
+.done .hint { margin: 24px 0 10px; font-size: 13px; color: var(--taupe); }
+.done pre { margin: 0; border: 1px solid var(--line); border-radius: var(--r-ctl); padding: 14px; max-height: 240px; overflow: auto; font-size: 12.5px; line-height: 1.4; color: var(--taupe); white-space: pre-wrap; overflow-wrap: anywhere; background: rgba(3, 2, 6, 0.5); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass { background: rgba(20, 18, 26, 0.92); }
+  .drawer, dialog { background: rgba(3, 2, 6, 0.97); }
+}
+@media (max-width: 980px) {
+  :root { --gutter: 16px; }
+  .nav__inner { height: 64px; }
+  :root { --nav-logo-h: 34px; }
+  .nav__product, .nav__link { display: none; }
+  .mast__title { padding: 44px 0 32px; }
+  .page { grid-template-columns: 1fr; gap: 16px; padding-top: 20px; }
+  .side { background: none; border: 0; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .side__inner { position: static; display: none; margin-top: 12px; }
+  .side.open .side__inner { display: grid; }
+  .filters-toggle { display: inline-flex; }
+  .toolbar { padding: 8px 8px 12px; }
+  .views { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; scrollbar-width: none; }
+  .views::-webkit-scrollbar { display: none; }
+  .views button { white-space: nowrap; }
+  body::before {
+    background:
+      radial-gradient(90vw 40vh at 50% 46%, rgba(135, 92, 255, 0.24), rgba(135, 92, 255, 0) 70%),
+      radial-gradient(70vw 30vh at 0% 100%, rgba(213, 165, 227, 0.10), rgba(213, 165, 227, 0) 70%),
+      var(--black);
+  }
+  .cols { display: none; }  .main { padding: 4px; }
+  .row { grid-template-columns: 1fr; gap: 16px; padding: 18px 14px; }
+  .list li + li { border-top: 1px solid var(--line); }
+  .st em { display: block; }
+  .drawer { top: 0; right: 0; bottom: 0; width: 100%; border-radius: 0; border: 0; padding-left: 20px; padding-right: 20px; }
+  .d-facts { grid-template-columns: 1fr 1fr 1fr; }
+  .d-facts div { padding: 12px; }
+  .grid2 { grid-template-columns: 1fr; }
+  .add__head, .add__body, .add__foot, .done { padding-left: 20px; padding-right: 20px; }
+  .legend { padding: 28px 22px; }
+  .legend dl { grid-template-columns: 1fr; gap: 4px; }
+  .legend dd { margin-bottom: 8px; }
+} @media (prefers-reduced-motion: no-preference) {
+  .drawer:not([hidden]) { animation: in 220ms ease-out; }
+  @keyframes in { from { transform: translateX(16px); opacity: 0; } to { transform: none; opacity: 1; } }
+}
+</style>
+</head>
+<body>
+  <a class="skip" href="#results">Skip to the directory</a>
+  <nav class="nav" aria-label="Main">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#" aria-label="Canton Partners, back to top">
+        <img class="logo" src="canton1.svg" alt="Canton Foundation" onerror="this.remove()">
+      </a>
+      <div class="nav__links">
+        <button type="button" class="nav__link" id="open-legend">How it's measured</button>
+        <button type="button" class="nav__link" id="nav-export">Download CSV</button>
+        <button type="button" class="btn btn--primary btn--sm" id="open-add">Add an organisation</button>
+      </div>
+    </div>
+  </nav>
+  <header class="mast">
+    <div class="mast__title">
+      <h1>Canton Partners</h1>
+      <p class="lede">Connect with Certified System Integrators &amp; Developer Studios in the Canton Ecosystem.</p>
+    </div>
+  </header>
+  <div class="page">
+    <aside class="side" id="side" aria-label="Filters">
+      <button type="button" class="btn filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="side-inner">Filters</button>
+      <div class="side__inner glass" id="side-inner">
+        <label class="search">
+          <span class="vh">Search organisations, clients and projects</span>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>
+          <input id="q" type="search" placeholder="Search" autocomplete="off">
+        </label>
+        <fieldset class="group" id="f-kind"><legend>Type</legend></fieldset>
+        <fieldset class="group" id="f-segment"><legend>Client category</legend></fieldset>
+        <fieldset class="group" id="f-proof"><legend>Proof of work</legend></fieldset>
+        <fieldset class="group" id="f-region"><legend>Region</legend></fieldset>
+        <fieldset class="group" id="f-sort"><legend>Sort by</legend></fieldset>
+        <div class="side__foot">
+          <button type="button" class="link" id="reset">Clear filters</button>
+          <button type="button" class="link" id="export">Download this view as CSV</button>
+        </div>
+      </div>
+    </aside>
+    <main class="main glass">
+      <div class="toolbar">
+        <nav class="views" id="views" aria-label="Views"></nav>
+        <div class="meta">
+          <p id="count" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="cols" aria-hidden="true">
+        <span>Organisation</span>
+        <span>Client category</span>
+        <span class="stations"><span>Building</span><span>Delivered</span><span>Live</span></span>
+      </div>
+      <ol class="list" id="results"></ol>
+      <p class="empty" id="empty" hidden>No organisation matches. Clear a filter or try a broader search.</p>
+    </main>
+  </div>
+  <footer class="foot">
+    <p id="updated"></p>
+    <p>To correct an organisation, edit its file in orgs/ with a pull request.</p>
+  </footer>
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="d-title" hidden>
+    <button type="button" class="btn drawer__close" id="close">Close</button>
+    <div id="drawer-body"></div>
+  </aside>
+  <dialog class="add" id="add" aria-labelledby="add-title">
+    <form id="add-form" novalidate>
+      <div class="add__head">
+        <div>
+          <h2 id="add-title">Add an organisation</h2>
+          <p>For organisations not in the directory yet. GitHub opens with the file ready and you confirm. To change an existing organisation, edit its file in orgs/ with a pull request.</p>
+        </div>
+        <button type="button" class="btn" data-close>Close</button>
+      </div>
+      <div class="add__body" id="add-fields">
+        <fieldset>
+          <legend>The organisation</legend>
+          <div class="grid2">
+            <label class="f f--wide"><span>Name</span><input type="text" name="name" autocomplete="off"></label>
+            <label class="f"><span>Type</span>
+              <select name="kind"><option value="">Choose</option><option>SI</option><option>Dev studio</option></select></label>
+            <label class="f"><span>Type, in more detail <i>(optional)</i></span><input type="text" name="typeDetail" placeholder="Regulated market infra + integrator"></label>
+            <label class="f"><span>Region</span>
+              <select name="region"><option value="">Choose</option><option>APAC</option><option>Americas</option><option>Europe</option><option>MENA</option><option>Global</option><option>Not recorded</option></select></label>
+            <label class="f"><span>Country or focus <i>(optional)</i></span><input type="text" name="regionDetail" placeholder="South Korea"></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Client category</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="segments" value="Institutional"> Institutional</label>
+            <label><input type="checkbox" name="segments" value="DeFi &amp; retail"> DeFi &amp; retail</label>
+            <label><input type="checkbox" name="segments" value="Infrastructure &amp; nodes"> Infrastructure &amp; nodes</label>
+            <label><input type="checkbox" name="segments" value="Developer education"> Developer education</label>
+          </div>
+          <label class="f" style="margin-top:18px"><span>Why this category</span>
+            <input type="text" name="segmentBasis" placeholder="Built a tokenized deposit POC for a Korean bank">
+            <small>Base it on clients and products you can see, not on what the firm says about itself.</small></label>
+        </fieldset>
+        <fieldset>
+          <legend>Relationship with the Foundation</legend>
+          <div class="grid2">
+            <label class="f"><span>Tier</span>
+              <select name="tier"><option value="">Choose</option><option>Core</option><option>Active</option><option>Early</option><option>Pipeline</option></select>
+              <small>Not sure? Use Pipeline.</small></label>
+            <label class="f"><span>Working with us since <i>(optional)</i></span><input type="month" name="internalStart"></label>
+            <label class="f f--wide"><span>Engagement status</span><input type="text" name="status" placeholder="Needs onboarding">
+              <small>Include the word "onboarding" if they need it, so they appear under Need onboarding.</small></label>
+            <label class="f f--wide"><span>Role in the Canton ecosystem <i>(optional)</i></span><input type="text" name="roles" placeholder="General Foundation member; runs a validator"></label>
+            <label class="f f--wide"><span>First public Canton activity <i>(optional)</i></span><input type="text" name="firstActivity" placeholder="Jun 2026 (MOU with Canton Foundation)"></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Proof of work</legend>
+          <div id="add-projects"></div>
+          <button type="button" class="link" id="add-project" style="margin-top:12px">Add another project</button>
+        </fieldset>
+        <fieldset>
+          <legend>Assessment (optional)</legend>
+          <div class="grid2">
+            <label class="f f--wide"><span>Strengths</span><input type="text" name="strengths"></label>
+            <label class="f f--wide"><span>Credibility outside Canton</span><input type="text" name="credibility">
+              <small>Mark claims you have not verified as "(self-reported)".</small></label>
+            <label class="f f--wide"><span>Open questions</span><input type="text" name="openQuestions"></label>
+            <label class="f f--wide"><span>Source links</span><textarea name="sources" placeholder="One https:// link per line"></textarea></label>
+          </div>
+        </fieldset>
+
+        <div class="err" id="add-errors" role="alert" hidden></div>
+      </div>
+
+      <div class="done" id="add-done" hidden></div>
+
+      <div class="add__foot" id="add-foot">
+        <button type="button" class="link" data-close>Cancel</button>
+        <button type="submit" class="btn btn--primary">Continue to GitHub</button>
+      </div>
+    </form>
+  </dialog>
+  <dialog class="legend" id="legend" aria-labelledby="legend-title">
+    <h2 id="legend-title">How proof of work is measured</h2>
+    <h3>The line on each row</h3>
+    <p>Each organisation's logged projects are counted at five stages, earliest on the left. The line is filled up to the furthest stage they have reached. A yellow point means work is live on MainNet.</p>
+    <dl style="margin-top:16px">
+      <dt>Building</dt><dd>In design, built locally, or running on TestNet.</dd>
+      <dt>Delivered</dt><dd>Demo or POC completed.</dd>
+      <dt>Live</dt><dd>Live on MainNet.</dd>
+    </dl>
+    <h3>Institution-ready</h3>
+    <p>Serves institutional clients and has work live or delivered. Start here when an institution asks for an SI.</p>
+    <h3>Client category</h3>
+    <p>Based on the clients and products we can see, not on what the firm says about itself. Each profile gives the reason.</p>
+    <h3>Tier (shown on profiles)</h3>
+    <dl>
+      <dt>Core</dt><dd>Super Validator, or Foundation member with MainNet work, or a regulated partner with live deployments.</dd>
+      <dt>Active</dt><dd>Verified Canton footprint with lighter production evidence.</dd>
+      <dt>Early</dt><dd>Some public Canton signal but no tracked project.</dd>
+      <dt>Pipeline</dt><dd>A target; no Canton activity found yet, or not researched.</dd>
+    </dl>
+    <form method="dialog"><button class="btn">Close</button></form>
+  </dialog>
+  <script id="directory-data">
+window.SI_DIRECTORY = {"updated": "2026-10-15", "orgs": [{"name": "5North", "kind": "Dev studio", "region": "Global", "tier": "Core", "status": "Deployed on Mainnet", "typeDetail": "Dev studio / venture studio", "regionDetail": "Global", "segmentBasis": "Loop retail wallet and Lighthouse explorer; approved NaaS provider", "roles": "Super Validator; Premier Foundation member; founder Yiannis Varelas on the CF board; Loop wallet (featured app); 5N Lighthouse explorer; approved NaaS validator provider", "firstActivity": "Founding-era Premier member and SV (exact start not recorded)", "internalStart": "", "strengths": "Wallet UX, explorers, foundational Canton infrastructure", "credibility": "Also active as an investor (listed on Ecosystem VC tab)", "openQuestions": "Add named projects to the Engagement tab", "segments": ["DeFi & retail", "Infrastructure & nodes"], "sources": ["https://canton.foundation/about-the-foundation/", "https://www.cantonecosystem.com/"], "projects": [{"stage": "Live / Mainnet", "name": "(project not named in sheet)", "description": "", "timeline": "", "check": "", "notes": "Add named projects (e.g. Loop wallet, Lighthouse explorer)"}]}, {"name": "AHA", "kind": "Dev studio", "region": "Global", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "Americas and Europe", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Confirm whether this is AngelHack", "segments": [], "sources": [], "projects": []}, {"name": "AngelHack", "kind": "Dev studio", "region": "Global", "tier": "Core", "status": "1 live, 1 testnet, 4 evaluating", "typeDetail": "Developer education + dev studio", "regionDetail": "Global (APAC-heavy)", "segmentBasis": "Canton Core Academy and hackathons; building Kairo RFQ DEX and Sanctum", "roles": "Super Validator; General Foundation member; ran Canton Core Academy, Canton Construct ideathon (Nov 2025) and Canton Catalyst 2026 showcase (Mar 2026)", "firstActivity": "Sep 2025 (Canton Core Academy launch)", "internalStart": "", "strengths": "Developer funnel at scale: education, hackathons, incubation; now also building apps", "credibility": "Founded 2011; reports 25,000+ developers through the Canton Academy programme", "openQuestions": "Refresh Kairo/Sanctum status (March targets); is 'AHA' on the Expansion tab the same org?", "segments": ["Developer education", "DeFi & retail"], "sources": ["https://www.canton.network/blog/angelhack-launches-canton-core-academy", "https://angelhack.com/case-studies/service/developer-quests/"], "projects": [{"stage": "Live / Mainnet", "name": "Kairo", "description": "RFQ DEX", "timeline": "Open Beta - Mid March", "check": "", "notes": "Timeline is from March; refresh status"}, {"stage": "Testnet", "name": "Sanctum", "description": "Tokenisation platform", "timeline": "Mainnet - March", "check": "", "notes": "Mainnet target (March) has passed; confirm whether it launched"}, {"stage": "Evaluating scope", "name": "QCP", "description": "Margin Collateral App", "timeline": "", "check": "", "notes": ""}, {"stage": "Evaluating scope", "name": "Bitsafe", "description": "cBTC Pools", "timeline": "", "check": "", "notes": ""}, {"stage": "Evaluating scope", "name": "SolvBTC", "description": "SolvBTC issuer", "timeline": "", "check": "", "notes": ""}, {"stage": "Evaluating scope", "name": "LetsExchange", "description": "Cross-chain gateway", "timeline": "", "check": "", "notes": "Spelled 'LetsExchnage' in source tab"}]}, {"name": "Antier", "kind": "Dev studio", "region": "APAC", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "India", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "Aracore", "kind": "SI", "region": "APAC", "tier": "Pipeline", "status": "Needs onboarding", "typeDetail": "System integrator / settlement infra", "regionDetail": "South Korea (US subsidiary of BPMG)", "segmentBasis": "Institutional stablecoin settlement network with Kbank", "roles": "No public Canton activity found", "firstActivity": "", "internalStart": "", "strengths": "Institutional Settlement Network (ISN) for cross-border stablecoin settlement", "credibility": "MOU with HashKey and Kbank (Jul 2026); earlier Kbank KRW stablecoin PoCs in Thailand and UAE; joined Global Dollar Network (Sep 2026)", "openQuestions": "Onboarding plan and Canton use case scope", "segments": ["Institutional"], "sources": ["https://www.aracore.io/", "https://group.hashkey.com/en/newsroom/hashkey-signs-strategic-mou-with-kbank-and-bpmg-to-strengthen-asia-connect-ecosystem", "https://www.einpresswire.com/article/943041508/aracore-joins-global-dollar-network-accelerating-global-expansion-of-isn"], "projects": [{"stage": "Exploratory", "name": "Stablecoin settlement with KBank", "description": "", "timeline": "", "check": "", "notes": "Needs onboarding first"}]}, {"name": "Avicenne", "kind": "Dev studio", "region": "MENA", "tier": "Early", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "Middle East", "segmentBasis": "Bank and asset manager integration, executive training (self-reported)", "roles": "Listed on Canton ecosystem site as service provider and validator: Daml design, architecture and vendor review, bank integration, executive training", "firstActivity": "", "internalStart": "", "strengths": "Stablecoin rails, tokenization, custody integration, due diligence", "credibility": "Self-reported: scaled USD0 to ~US$1.8B TVL; confidential auction with Zama (US$121M committed)", "openQuestions": "Any Canton client work yet?", "segments": ["Institutional"], "sources": ["https://www.cantonecosystem.com/ecosystem/avicenne-studio"], "projects": []}, {"name": "BaaS ID", "kind": "SI", "region": "APAC", "tier": "Pipeline", "status": "Needs onboarding", "typeDetail": "System integrator", "regionDetail": "Taiwan", "segmentBasis": "Enterprise DID and secure storage", "roles": "No public Canton activity found", "firstActivity": "", "internalStart": "", "strengths": "Decentralised identity (W3C DID) and secure storage", "credibility": "Subsidiary of BaaS Innovation, Taiwan's first listed blockchain company (TPEx 3555)", "openQuestions": "Confirm legal entity (BaaSid vs BaaS Innovation)", "segments": ["Institutional"], "sources": ["https://www.fintechspace.com.tw/en/fintech_team/baas-innovation-co-ltd/", "https://www.taiwanarena.tech/startups-detail/BaaSidInternational/"], "projects": []}, {"name": "BootNode", "kind": "Dev studio", "region": "Americas", "tier": "Early", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "LATAM", "segmentBasis": "Open Canton learning path", "roles": "Published an open 'Canton Learning Path' repo on GitHub", "firstActivity": "", "internalStart": "", "strengths": "Developer education content", "credibility": "", "openQuestions": "Any client builds?", "segments": ["Developer education"], "sources": ["https://github.com/BootNodeDev/canton-learning-path"], "projects": []}, {"name": "BSOS", "kind": "SI", "region": "APAC", "tier": "Early", "status": "Needs onboarding; runs a validator", "typeDetail": "System integrator", "regionDetail": "Taiwan", "segmentBasis": "Enterprise supply-chain finance and stablecoin payments", "roles": "Listed on Canton ecosystem site as a validator (stablecoin payments, tokenization)", "firstActivity": "", "internalStart": "", "strengths": "Supply-chain finance, stablecoin payments, RWA tokenization", "credibility": "Founded 2018; J.P. Morgan Quorum's first technical partner in Asia; R3 Corda venture programme; CB Insights 2021 list; clients incl. Foxconn MIH and Wistron", "openQuestions": "Which network is the validator on?", "segments": ["Institutional"], "sources": ["https://www.cantonecosystem.com/ecosystem/bsos", "https://bsos.co/", "https://medium.com/bsos-taiwan/about"], "projects": []}, {"name": "Cantor8", "kind": "Dev studio", "region": "Not recorded", "tier": "Core", "status": "Deployed on Mainnet", "typeDetail": "Dev studio / product builder", "regionDetail": "", "segmentBasis": "C8 retail wallet, swap and vault; approved NaaS provider", "roles": "General Foundation member (logo on CF site ~Nov 2025); approved NaaS validator provider; C8 Wallet featured app", "firstActivity": "~Nov 2025 (Foundation membership, proxy)", "internalStart": "", "strengths": "Wallets, swap modules, vaults; Daml engineering and validator infrastructure", "credibility": "Self-described 'ConsenSys of Canton' (HackerNoon profile); treat as marketing", "openQuestions": "Region and team size not recorded", "segments": ["DeFi & retail", "Infrastructure & nodes"], "sources": ["https://canton.foundation/about-the-foundation/", "https://hackernoon.com/cantor8-building-the-future-of-canton-network"], "projects": [{"stage": "Live / Mainnet", "name": "Wallet", "description": "C8 Wallet", "timeline": "", "check": "", "notes": ""}, {"stage": "Live / Mainnet", "name": "Swap", "description": "", "timeline": "", "check": "", "notes": ""}, {"stage": "Live / Mainnet", "name": "Registry", "description": "", "timeline": "", "check": "", "notes": ""}, {"stage": "Live / Mainnet", "name": "Private transfer", "description": "", "timeline": "", "check": "", "notes": ""}]}, {"name": "Co-Builders", "kind": "Dev studio", "region": "Americas", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "LATAM", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "Conviction", "kind": "Dev studio", "region": "APAC", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "Vietnam", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "COZ", "kind": "Dev studio", "region": "Americas", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "LATAM", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "Deloitte", "kind": "SI", "region": "Global", "tier": "Active", "status": "Not engaged in sheet", "typeDetail": "System integrator (Big 4)", "regionDetail": "Global", "segmentBasis": "Big 4; Canton Network launch participant", "roles": "Among 2023 Canton Network launch participants; listed on the Canton ecosystem site as a service provider with Daml expertise", "firstActivity": "May 2023 (Canton Network launch)", "internalStart": "", "strengths": "Advisory and delivery across most network utilities", "credibility": "Big 4 firm", "openQuestions": "Identify the current Canton practice lead", "segments": ["Institutional"], "sources": ["https://www.cantonecosystem.com/", "https://fortune.com/crypto/2023/05/09/deloitte-goldman-sachs-microsoft-among-institutional-players-partnering-on-new-blockchain-network/"], "projects": []}, {"name": "EY", "kind": "SI", "region": "Global", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "System integrator (Big 4)", "regionDetail": "Global", "segmentBasis": "Big 4", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": ["Institutional"], "sources": [], "projects": []}, {"name": "Fairsquare Labs", "kind": "SI", "region": "APAC", "tier": "Early", "status": "Exploring private synchronizer", "typeDetail": "System integrator", "regionDetail": "South Korea", "segmentBasis": "Security-token platforms for Korean brokers and market infrastructure", "roles": "Website lists Digital Asset among global partners; nothing live on Canton", "firstActivity": "", "internalStart": "", "strengths": "Security-token infrastructure, MPC wallets, work with Korean market infrastructure", "credibility": "Built Hanwha Investment & Securities' tokenized securities platform; Progmat + KDAC MOU (Feb 2025); works with KSD and KRX consortium; Series A US$7M (2022)", "openQuestions": "Hanwha reportedly uses Canton for settlement; is Fairsquare involved?", "segments": ["Institutional"], "sources": ["https://www.fairsquarelab.com/", "https://www.techtimes.com/articles/326919/20260907/hanwha-bets-three-blockchain-rails-own-korea-tokenized-securities.htm", "https://app.dealroom.co/companies/fairsquarelab"], "projects": [{"stage": "Exploratory", "name": "Private synchronizer", "description": "", "timeline": "", "check": "", "notes": ""}]}, {"name": "Fintech Stable", "kind": "Dev studio", "region": "MENA", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "MENA", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "FP Block", "kind": "Dev studio", "region": "Europe", "tier": "Early", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "UK", "segmentBasis": "Not enough information", "roles": "General Foundation member as FP Complete Corporation (logo ~May 2026)", "firstActivity": "~May 2026 (Foundation membership, proxy)", "internalStart": "", "strengths": "Haskell/Rust engineering lineage (FP Complete)", "credibility": "", "openQuestions": "What have they built on Canton?", "segments": [], "sources": ["https://canton.foundation/about-the-foundation/"], "projects": []}, {"name": "Hexaware", "kind": "SI", "region": "Global", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "System integrator (large)", "regionDetail": "Global", "segmentBasis": "Large enterprise SI", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": ["Institutional"], "sources": [], "projects": []}, {"name": "HydraX", "kind": "SI", "region": "APAC", "tier": "Core", "status": "3 live, 2 evaluating, 5 exploratory", "typeDetail": "Regulated market infra + integrator", "regionDetail": "Singapore / SE Asia", "segmentBasis": "MAS-regulated; bank and exchange pipeline; approved NaaS provider", "roles": "Approved NaaS validator provider; launched Sigma Value Token, first tokenised structured product on Canton (Apr 2025); Canton Buildcast Ep. 6 (May 2025); HX Gateway API (Jul 2026)", "firstActivity": "Apr 2025 (Sigma Value Token launch)", "internalStart": "", "strengths": "Licensed broker, exchange and custodian; REST API that removes the need for Daml expertise; bank pipeline across SE Asia", "credibility": "MAS-regulated; reports >US$100M tokenised on Canton via DA Registry", "openQuestions": "Q1/Q2 2026 timelines have passed; TDCC overlaps the TDCC x Nomura POC", "segments": ["Institutional", "Infrastructure & nodes"], "sources": ["https://www.canton.network/news/hydra-x-launches-the-sigma-value-token-on-the-canton-network", "https://macaubusiness.com/hydra-x-launches-hx-gateway-api-to-advance-institutional-adoption-on-the-canton-network/"], "projects": [{"stage": "Exploratory", "name": "UOB Bank", "description": "", "timeline": "Q2 2026", "check": "", "notes": ""}, {"stage": "Exploratory", "name": "OCBC Bank", "description": "", "timeline": "Q2 2026", "check": "", "notes": ""}, {"stage": "Exploratory", "name": "DBS Bank", "description": "", "timeline": "Q2 2026", "check": "", "notes": ""}, {"stage": "Exploratory", "name": "Bursa Malaysia (National Stock Exchange)", "description": "", "timeline": "Q2 2026", "check": "", "notes": ""}, {"stage": "Exploratory", "name": "Maybank", "description": "", "timeline": "Q2 2026", "check": "", "notes": ""}, {"stage": "Evaluating scope", "name": "Singapore Exchange (SGX)", "description": "", "timeline": "Q1 2026", "check": "", "notes": ""}, {"stage": "Evaluating scope", "name": "Taiwan Depository & Clearing Corp (TDCC)", "description": "", "timeline": "Q1 2026", "check": "", "notes": "Same institution as the TDCC x Nomura MMF POC; worth aligning the two tracks"}, {"stage": "Live / Mainnet", "name": "SDAX (Singapore digital asset exchange)", "description": "", "timeline": "Q2 2026", "check": "", "notes": ""}, {"stage": "Live / Mainnet", "name": "EXN (Labuan crypto brokerage)", "description": "", "timeline": "Q2 2026", "check": "", "notes": ""}, {"stage": "Live / Mainnet", "name": "Jadaex (Malaysia digital assets custodian)", "description": "", "timeline": "Q2 2026", "check": "", "notes": ""}]}, {"name": "Hypotenuse Labs", "kind": "Dev studio", "region": "Global", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "Global", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "Infosys", "kind": "SI", "region": "Global", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "System integrator (large)", "regionDetail": "Global", "segmentBasis": "Large enterprise SI", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": ["Institutional"], "sources": [], "projects": []}, {"name": "IntellectEU", "kind": "SI", "region": "Europe", "tier": "Core", "status": "Deployed on Mainnet", "typeDetail": "System integrator", "regionDetail": "Europe / Global", "segmentBasis": "Catalyst suite for institutional payments and digital assets; approved NaaS provider", "roles": "Super Validator; Premier Foundation member; Head of Product on the CF board; approved NaaS validator provider; Dev Fund grantee (milestones reviewed by DevRel)", "firstActivity": "Founding-era Premier member and SV (exact start not recorded)", "internalStart": "", "strengths": "Institutional payments and integration layer; Canton-native product suite", "credibility": "Established financial-services SI", "openQuestions": "Name the MainNet projects and clients", "segments": ["Institutional", "Infrastructure & nodes"], "sources": ["https://canton.foundation/about-the-foundation/", "https://canton.foundation/validators/"], "projects": [{"stage": "Live / Mainnet", "name": "(project not named in sheet)", "description": "", "timeline": "", "check": "", "notes": "Add named projects"}]}, {"name": "Knova", "kind": "SI", "region": "Americas", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "System integrator", "regionDetail": "USA", "segmentBasis": "Works only with FIs and institutions (per sheet)", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Focus: FIs and institutions (no startups), per sheet", "segments": ["Institutional"], "sources": [], "projects": []}, {"name": "KPMG", "kind": "SI", "region": "Global", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "System integrator (Big 4)", "regionDetail": "Global", "segmentBasis": "Big 4", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": ["Institutional"], "sources": [], "projects": []}, {"name": "Labrys", "kind": "Dev studio", "region": "APAC", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "Australia", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "Launchnodes Labs", "kind": "Dev studio", "region": "Not recorded", "tier": "Active", "status": "Infra live; apps local/design", "typeDetail": "Node provider + dev studio", "regionDetail": "", "segmentBasis": "White-label NaaS provider; P2P trading and vault apps in progress", "roles": "General Foundation member (logo ~Oct 2025); approved white-label, multi-tenant NaaS provider", "firstActivity": "~Oct 2025 (Foundation membership, proxy)", "internalStart": "", "strengths": "Node operations and staking infrastructure", "credibility": "Non-custodial staking and node provider across networks", "openQuestions": "Engagement row says Mainnet but its own description says apps are local; reconcile", "segments": ["Infrastructure & nodes", "DeFi & retail"], "sources": ["https://www.canton.network/ecosystem/launchnodes", "https://www.launchnodes.com/canton/"], "projects": [{"stage": "Local / design only", "name": "FlowP2P", "description": "Peer-to-peer buying and selling of any CIP-56 token", "timeline": "", "check": "row marked Mainnet but own description says local environment, targeting DevNet/TestNet next", "notes": ""}, {"stage": "Local / design only", "name": "Vault", "description": "Infrastructure-independent multisig vault", "timeline": "", "check": "", "notes": "Same conflict as FlowP2P"}, {"stage": "Local / design only", "name": "Lido Yield", "description": "Makes Lido staking yield available to CC holders on Canton via Chainlink", "timeline": "", "check": "", "notes": "Design phase"}, {"stage": "Local / design only", "name": "Knowledge Engine", "description": "Incentivised quiz app to help Daml devs get started", "timeline": "", "check": "", "notes": "Local environment"}]}, {"name": "Lazer", "kind": "Dev studio", "region": "Americas", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "Canada", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "LG CNS", "kind": "SI", "region": "APAC", "tier": "Pipeline", "status": "Needs onboarding", "typeDetail": "System integrator (large)", "regionDetail": "South Korea", "segmentBasis": "Large financial and public-sector SI", "roles": "No public Canton activity found", "firstActivity": "", "internalStart": "", "strengths": "Finance and public-sector SI at scale; AI and cloud", "credibility": "One of Korea's largest IT SIs; Google Cloud Partner of the Year (Korea) 2026", "openQuestions": "Who is the sponsor inside LG CNS?", "segments": ["Institutional"], "sources": ["https://www.thelec.net/news/articleView.html?idxno=6763"], "projects": []}, {"name": "LimeChain", "kind": "Dev studio", "region": "Europe", "tier": "Active", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "Europe", "segmentBasis": "Positions its Canton practice at institutions (no tracked client yet)", "roles": "Community Tech Partner Program member (answers forum developer questions); dedicated Canton development services", "firstActivity": "", "internalStart": "", "strengths": "Daml engineering, RWA tokenization, institutional dApps", "credibility": "Long-standing Web3 engineering firm", "openQuestions": "Any client builds to add?", "segments": ["Institutional"], "sources": ["https://limechain.tech/canton-network-development-services"], "projects": []}, {"name": "Lync", "kind": "Dev studio", "region": "APAC", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "India", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "No Witness Labs", "kind": "Dev studio", "region": "Global", "tier": "Early", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "Global", "segmentBasis": "Not enough information", "roles": "General Foundation member (logo ~Sep 2026)", "firstActivity": "~Sep 2026 (Foundation membership, proxy)", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "What have they built on Canton?", "segments": [], "sources": ["https://canton.foundation/about-the-foundation/"], "projects": []}, {"name": "Nodeinfra", "kind": "SI", "region": "APAC", "tier": "Active", "status": "Demos delivered", "typeDetail": "System integrator / infra", "regionDetail": "South Korea", "segmentBasis": "Tokenized deposit, stablecoin and MMF demos; approved NaaS provider", "roles": "Approved NaaS validator provider; public canton-tta test harness repo; offers Canton Zenith rollups", "firstActivity": "", "internalStart": "", "strengths": "Validator operations, private synchronizers, rollup infrastructure", "credibility": "Official Polygon Labs RaaS partner in Korea; runs Korbit's L2 infra", "openQuestions": "Which network were demos on, and for which clients?", "segments": ["Institutional", "Infrastructure & nodes"], "sources": ["https://canton.foundation/validators/", "https://github.com/nodeinfra/canton-tta", "https://nodeinfra.com/services/rollup"], "projects": [{"stage": "Delivered demo / POC", "name": "Tokenized deposit demo", "description": "", "timeline": "", "check": "", "notes": ""}, {"stage": "Delivered demo / POC", "name": "Stablecoin demo", "description": "", "timeline": "", "check": "", "notes": ""}, {"stage": "Delivered demo / POC", "name": "MMF tokenization platform", "description": "", "timeline": "", "check": "", "notes": ""}, {"stage": "Delivered demo / POC", "name": "Private synchronizer (NodeSTO)", "description": "", "timeline": "", "check": "", "notes": ""}]}, {"name": "o1 Labs", "kind": "Dev studio", "region": "Europe", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "Europe", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "Obsidian Systems", "kind": "Dev studio", "region": "Americas", "tier": "Core", "status": "Deployed on Mainnet", "typeDetail": "Dev studio + node operator", "regionDetail": "USA / Global", "segmentBasis": "MainNet builds for DTCC and iCapital; approved NaaS provider", "roles": "Super Validator; Premier Foundation member; partner Ryan Trinkle sits on the CF board (chairs Audit & Finance); approved NaaS validator provider; Community Tech Partner Program member; Dev Fund-funded Daml 3 developer certification", "firstActivity": "Founding-era Premier member and SV (exact start not recorded)", "internalStart": "", "strengths": "Functional-programming depth (Daml is Haskell-based); consulting plus node hosting; developer certification", "credibility": "Co-founder known for Reflex FRP; board seats at Haskell Foundation and NixOS Foundation", "openQuestions": "Confirm scope and go-live dates for DTCC and iCapital work", "segments": ["Institutional", "Infrastructure & nodes"], "sources": ["https://canton.foundation/about-the-foundation/", "https://canton.foundation/validators/"], "projects": [{"stage": "Live / Mainnet", "name": "DTCC", "description": "", "timeline": "", "check": "", "notes": ""}, {"stage": "Live / Mainnet", "name": "iCapital", "description": "", "timeline": "", "check": "", "notes": ""}]}, {"name": "PixelPlex", "kind": "Dev studio", "region": "APAC", "tier": "Active", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "APAC (per sheet); global", "segmentBasis": "Wallets, dApp SDK and indexer (self-reported)", "roles": "General Foundation member (logo ~May 2026); says it built the Loop wallet, a KYC platform, CC View indexer and Console dApp SDK; offers Daml audits", "firstActivity": "~May 2026 (Foundation membership, proxy)", "internalStart": "", "strengths": "Wallets, dApp SDKs, indexers, Daml audits", "credibility": "17+ years in software; Clutch reviews; TON and Hedera partner", "openQuestions": "Loop is listed as a 5North product; confirm PixelPlex's role (likely built it for 5North)", "segments": ["DeFi & retail"], "sources": ["https://pixelplex.io/services/canton-network-exchange-development-company/", "https://canton.foundation/about-the-foundation/"], "projects": []}, {"name": "Qasara", "kind": "Dev studio", "region": "APAC", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "India", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "Reverion", "kind": "Dev studio", "region": "APAC", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "Philippines", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "Samsung SDS", "kind": "SI", "region": "APAC", "tier": "Pipeline", "status": "Needs onboarding", "typeDetail": "System integrator (large)", "regionDetail": "South Korea", "segmentBasis": "Large financial SI; KSD token securities contract", "roles": "No public Canton activity found", "firstActivity": "", "internalStart": "", "strengths": "Financial SI; entering digital asset and stablecoin infrastructure", "credibility": "Invested in Dunamu (Upbit operator) for stablecoin infra; won KSD token securities platform contract (target Feb 2027)", "openQuestions": "Who is the sponsor inside Samsung SDS?", "segments": ["Institutional"], "sources": ["https://finance.biggo.com/news/9d3b06e8-0dea-44ba-9374-08a56d035488", "https://www.techtimes.com/articles/326919/20260907/hanwha-bets-three-blockchain-rails-own-korea-tokenized-securities.htm"], "projects": []}, {"name": "SFXDX", "kind": "Dev studio", "region": "MENA", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "Dubai (Russian)", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "Tago Capital", "kind": "Dev studio", "region": "APAC", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "APAC", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "Tenzro", "kind": "Dev studio", "region": "Not recorded", "tier": "Active", "status": "2 Mainnet (per sheet), 1 evaluating", "typeDetail": "Dev studio / AI infra", "regionDetail": "", "segmentBasis": "AI trading and RWA apps; not a Foundation member", "roles": "Not found in Foundation member, SV or NaaS lists. Publishes a Canton adapter (JSON Ledger API v2), Canton MCP server, and a wallet with Canton/Daml support on its own multi-VM chain", "firstActivity": "Not determinable from public sources", "internalStart": "", "strengths": "AI agents, multi-chain settlement, Canton tooling", "credibility": "Runs its own L1 (Tenzro Network, TNZO token)", "openQuestions": "Stage vs notes conflict on Boli/Rivier; verify on Scan; not a Foundation member", "segments": ["DeFi & retail"], "sources": ["https://www.tenzro.com/docs/canton", "https://github.com/tenzro/tenzro-wallet"], "projects": [{"stage": "Evaluating scope", "name": "Caddy - Validator Node Support", "description": "Assisting with devnet validator access", "timeline": "Q1 2026", "check": "", "notes": "Potential production deployment support"}, {"stage": "Live / Mainnet", "name": "Boli Platform (RWA)", "description": "Real World Asset tokenization platform", "timeline": "Q1 2026", "check": "stage says Mainnet but note says 'Preparing mainnet deployment'. Verify.", "notes": ""}, {"stage": "Live / Mainnet", "name": "Rivier Platform (AI Trading)", "description": "Agentic / AI-powered trading platform", "timeline": "Q1 2026", "check": "stage says Mainnet but note says 'Preparing mainnet deployment'. Verify.", "notes": ""}]}, {"name": "VacuumLabs", "kind": "Dev studio", "region": "Not recorded", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "Varmeta", "kind": "Dev studio", "region": "APAC", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "Vietnam", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}, {"name": "WaveBridge", "kind": "SI", "region": "APAC", "tier": "Active", "status": "Building Pado", "typeDetail": "Regulated digital asset infra", "regionDetail": "South Korea", "segmentBasis": "KoFIU-registered VASP; MOU with KB Securities and Canton Foundation", "roles": "Three-way MOU with KB Securities and Canton Foundation (4 Jun 2026); CF presenting with KB Securities at WaveBridge's Bridge Seoul (1 Oct 2026)", "firstActivity": "Jun 2026 (KB Securities / CF MOU)", "internalStart": "", "strengths": "Institutional custody, OTC and settlement; stablecoin custody across multiple currencies", "credibility": "KoFIU-registered VASP; EU VASP in Lithuania; CNBC/Statista 2026 top fintech (only Korean digital-asset pick)", "openQuestions": "What is Pado, and what stage is it at?", "segments": ["Institutional"], "sources": ["https://www.upi.com/Top_News/World-News/2026/06/05/KB-Securities-partners-with-Canton-Foundation-Wavebridge/3531780676754/", "https://www.tokenpost.com/news/business/22300", "https://en.bloomingbit.io/feed/news/120809"], "projects": [{"stage": "Building", "name": "Pado", "description": "", "timeline": "", "check": "", "notes": ""}]}, {"name": "Woof", "kind": "Dev studio", "region": "Europe", "tier": "Pipeline", "status": "Not engaged in sheet", "typeDetail": "Dev studio", "regionDetail": "EMEA", "segmentBasis": "", "roles": "", "firstActivity": "", "internalStart": "", "strengths": "", "credibility": "", "openQuestions": "Research Canton activity", "segments": [], "sources": [], "projects": []}]};
+</script>
+<script>
+(function () {
+  "use strict";
+  const DATA = window.SI_DIRECTORY;
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+  if (!DATA || !Array.isArray(DATA.orgs) || !DATA.orgs.length) {
+    $("results").innerHTML = '<li class="empty">No data in this file yet. Run python3 build.py to add the organisations from orgs/.</li>';
+    return;
+  }
+  const STAGES = ["Local / design only", "Building", "Testnet", "Delivered demo / POC", "Live / Mainnet"];
+  const STATIONS = [
+    { label: "Building", stages: ["Local / design only", "Building", "Testnet"] },
+    { label: "Delivered", stages: ["Delivered demo / POC"] },
+    { label: "Live", stages: ["Live / Mainnet"] },
+  ]; const STAGE_SHORT = { "Local / design only": "Design", "Building": "Building", "Testnet": "TestNet", "Delivered demo / POC": "Delivered", "Live / Mainnet": "Live" };
+  const TIERS = ["Core", "Active", "Early", "Pipeline"];
+  const SEGMENTS = ["Institutional", "DeFi & retail", "Infrastructure & nodes", "Developer education"];
+  const SEG_CLASS = { "Institutional": "Institutional", "DeFi & retail": "DeFi", "Infrastructure & nodes": "Infra", "Developer education": "Edu" };
+  const PROOF = ["In production", "Delivered", "In progress", "No tracked work"];
+  const REGIONS = ["APAC", "Americas", "Europe", "MENA", "Global", "Not recorded"];
+  const KINDS = ["SI", "Dev studio"];
+  function proofOf(o) {
+    const s = new Set(o.projects.map(p => p.stage));
+    if (s.has("Live / Mainnet")) return "In production";
+    if (s.has("Delivered demo / POC")) return "Delivered";
+    if (["Testnet", "Building", "Local / design only"].some(x => s.has(x))) return "In progress";
+    return "No tracked work";
+  } 
+  DATA.orgs.forEach(o => { o.projects = o.projects.filter(p => STAGES.includes(p.stage)); });
+  const orgs = DATA.orgs.map(o => {
+    const counts = STATIONS.map(st => o.projects.filter(p => st.stages.includes(p.stage)).length);
+    let reach = -1;
+    counts.forEach((n, i) => { if (n) reach = i; });
+    const shipped = counts[1] + counts[2];
+    const proof = proofOf(o);
+    return Object.assign({}, o, {
+      counts, reach, shipped, proof,
+      institutionReady: o.segments.includes("Institutional") && (proof === "In production" || proof === "Delivered"),
+      needsOnboarding: /onboarding/i.test(o.status),
+      unresearched: !o.roles,
+      haystack: [o.name, o.typeDetail, o.regionDetail, o.roles, o.strengths, o.credibility, o.segments.join(" "),
+        ...o.projects.map(p => `${p.name} ${p.description}`)].join(" ").toLowerCase(),
+    });
+  });  const VIEWS = [
+    { id: "all", label: "All", test: () => true },
+    { id: "ready", label: "Institution-ready", test: o => o.institutionReady },
+    { id: "onboarding", label: "Need onboarding", test: o => o.needsOnboarding },
+    { id: "unresearched", label: "Not yet researched", test: o => o.unresearched },
+  ];
+  const SETS = ["kind", "segment", "proof", "region"];
+  const state = { view: "all", q: "", sort: "proof", kind: new Set(), segment: new Set(), proof: new Set(), region: new Set() };
+  let currentOrg = null, lastFocus = null;
+  function readHash() {
+    const h = new URLSearchParams(location.hash.slice(1));
+    state.view = VIEWS.some(v => v.id === h.get("view")) ? h.get("view") : "all";
+    state.q = h.get("q") || "";
+    state.sort = h.get("sort") === "name" ? "name" : "proof";
+    SETS.forEach(k => { state[k] = new Set((h.get(k) || "").split("|").filter(Boolean)); });
+    return h.get("org");
+  } function writeHash() {
+    const h = new URLSearchParams();
+    if (state.view !== "all") h.set("view", state.view);
+    if (state.q) h.set("q", state.q);
+    if (state.sort !== "proof") h.set("sort", state.sort);
+    SETS.forEach(k => { if (state[k].size) h.set(k, [...state[k]].join("|")); });
+    if (currentOrg) h.set("org", currentOrg);
+    const s = h.toString();
+    history.replaceState(null, "", s ? "#" + s : location.pathname + location.search);
+  }  function matches(o, skip) {
+    const view = VIEWS.find(v => v.id === state.view);
+    const q = state.q.trim().toLowerCase();
+    return view.test(o) &&
+      (!q || q.split(/\s+/).every(t => o.haystack.includes(t))) &&
+      (skip === "kind" || !state.kind.size || state.kind.has(o.kind)) &&
+      (skip === "segment" || !state.segment.size || o.segments.some(s => state.segment.has(s))) &&
+      (skip === "proof" || !state.proof.size || state.proof.has(o.proof)) &&
+      (skip === "region" || !state.region.size || state.region.has(o.region));
+  }
+  function filtered() {
+    const byName = (a, b) => a.name.localeCompare(b.name);
+    const byProof = (a, b) => PROOF.indexOf(a.proof) - PROOF.indexOf(b.proof) || b.shipped - a.shipped ||
+      TIERS.indexOf(a.tier) - TIERS.indexOf(b.tier) || byName(a, b);
+    return orgs.filter(o => matches(o)).sort(state.sort === "name" ? byName : byProof);
+  }
+  function renderSummary() {
+    $("updated").textContent = DATA.updated ? `Updated ${DATA.updated}` : "";
+  }  function optionList(id, key, values, type = "checkbox") {
+    const el = $(id);
+    const legend = el.querySelector("legend").outerHTML;
+    el.innerHTML = legend + values.map(v => {
+      const n = key === "sort" ? "" : orgs.filter(o => matches(o, key) && (
+        key === "segment" ? o.segments.includes(v) : o[key] === v)).length;
+      const checked = key === "sort" ? state.sort === v.toLowerCase().split(" ")[0] : state[key].has(v);
+      const val = key === "sort" ? v.toLowerCase().split(" ")[0] : v;
+      return `<label class="opt"><input type="${type}" name="${key}" value="${esc(val)}" ${checked ? "checked" : ""}>` +
+        `<span>${esc(v)}</span><span class="n">${n}</span></label>`;
+    }).join("");
+  }
+  function renderFilters() {
+    optionList("f-kind", "kind", KINDS);
+    optionList("f-segment", "segment", SEGMENTS);
+    optionList("f-proof", "proof", PROOF);
+    optionList("f-region", "region", REGIONS);
+    optionList("f-sort", "sort", ["Proof of work", "Name"], "radio");
+  }
+  function renderViews() {
+    $("views").innerHTML = VIEWS.map(v =>
+      `<button type="button" data-view="${v.id}" aria-pressed="${state.view === v.id}">${esc(v.label)}<span class="n">${orgs.filter(v.test).length}</span></button>`
+    ).join("");
+  }
+  function railHTML(o) {
+    const label = STATIONS.map((s, i) => `${s.label} ${o.counts[i]}`).join(", ");
+    return `<span class="rail" style="--reach:${Math.max(o.reach, 0)}" role="img" aria-label="Projects by stage: ${esc(label)}">` +
+      STATIONS.map((s, i) => {
+        const n = o.counts[i];
+        const cls = n ? (i === STATIONS.length - 1 ? "st on live" : "st on") : "st";
+        return `<span class="${cls}"><i></i><b>${n || ""}</b><em>${s.label}</em></span>`;
+      }).join("") + `</span>`;
+  }
+  function catsHTML(o) {
+    if (!o.segments.length) return `<span class="cats"><span class="cat cat--none">Not classified yet</span></span>`;
+    return `<span class="cats">${o.segments.map(s => `<span class="cat cat--${SEG_CLASS[s]}">${esc(s)}</span>`).join("")}</span>`;
+  }
+  function renderList() {
+    const list = filtered();
+    $("count").textContent = list.length === orgs.length ? plural(orgs.length, "organisation", "organisations")
+      : `${list.length} of ${orgs.length} organisations`;
+    $("empty").hidden = list.length > 0;
+    $("results").innerHTML = list.map(o => `
+      <li><button type="button" class="row" data-org="${esc(o.name)}" aria-haspopup="dialog">
+        <span><span class="org__name">${esc(o.name)}</span>
+          <span class="org__meta">${esc(o.kind)}${o.region === "Not recorded" ? "" : ", " + esc(o.regionDetail || o.region)}</span></span>
+        ${catsHTML(o)}
+        ${railHTML(o)}
+      </button></li>`).join("");
+  }
+  function render() {
+    renderViews();
+    renderFilters();
+    renderList();
+    writeHash();
+  }
+  function sec(title, body) { return body ? `<section class="d-sec"><h3>${esc(title)}</h3>${body}</section>` : ""; }
+  function txt(t) { return t ? `<p>${esc(t)}</p>` : ""; }
+  function projectsHTML(o) {
+    if (!o.projects.length) return `<p class="soft">No projects logged yet.</p>`;
+    const sorted = [...o.projects].sort((a, b) => STAGES.indexOf(b.stage) - STAGES.indexOf(a.stage));
+    return `<ul class="proj-list">${sorted.map(p => {
+      const more = [p.description, p.timeline && `Timeline: ${p.timeline}`, p.notes].filter(Boolean).join(". ");
+      return `<li><span class="proj-stage${p.stage === "Live / Mainnet" ? " live" : ""}">${esc(STAGE_SHORT[p.stage] || p.stage)}</span>
+        <div><div class="proj-name">${esc(p.name)}</div>${more ? `<div class="proj-more">${esc(more)}</div>` : ""}
+        ${p.check ? `<div class="check">To verify: ${esc(p.check)}</div>` : ""}</div></li>`;
+    }).join("")}</ul>`;
+  } function openOrg(name, opener) {
+    const o = orgs.find(x => x.name === name);
+    if (!o) return;
+    currentOrg = o.name;
+    lastFocus = opener || document.activeElement;
+    const where = [o.typeDetail || o.kind, o.region === "Not recorded" ? "" : (o.regionDetail || o.region)].filter(Boolean).join(", ");
+    $("drawer-body").innerHTML = `
+      <p class="d-kicker">${esc(where)}</p>
+      <h2 class="d-title" id="d-title">${esc(o.name)}</h2>
+      <p class="d-status">${esc(o.status)}</p>
+      <dl class="d-facts glass">
+        <div><dt>Proof of work</dt><dd>${esc(o.proof)}</dd></div>
+        <div><dt>Institution-ready</dt><dd>${o.institutionReady ? "Yes" : "Not yet"}</dd></div>
+        <div><dt>Tier</dt><dd>${esc(o.tier)}</dd></div>
+      </dl>
+      <div class="d-rail glass">${railHTML(o)}</div>
+      ${sec("Work on Canton", projectsHTML(o))}
+      ${sec("Client category", `<p>${esc(o.segments.join(", ") || "Not classified yet")}</p>${o.segmentBasis ? `<p class="soft">${esc(o.segmentBasis)}</p>` : ""}`)}
+      ${sec("Role in the Canton ecosystem", o.roles ? txt(o.roles) : `<p class="soft">Not researched yet.</p>`)}
+      ${sec("Strengths", txt(o.strengths))}
+      ${sec("Credibility outside Canton", txt(o.credibility))}
+      ${sec("How long they have worked with us",
+        `<p>${o.internalStart ? `Working with the Foundation since ${esc(o.internalStart)}.` : `<span class="soft">Start date with the Foundation not recorded.</span>`}</p>` +
+        (o.firstActivity ? `<p class="soft">First public Canton activity: ${esc(o.firstActivity)}.</p>` : ""))}
+      ${sec("Open questions", txt(o.openQuestions))}
+      ${sec("Sources", o.sources.length ? `<ul class="sources">${o.sources.map(u =>
+        `<li><a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(u.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</a></li>`).join("")}</ul>` : `<p class="soft">No public sources yet.</p>`)}
+    `;
+    $("drawer").hidden = false;
+    $("scrim").hidden = false;
+    document.body.style.overflow = "hidden";
+    $("drawer").scrollTop = 0;
+    $("close").focus();
+    writeHash();
+  }
+  function closeOrg() {
+    $("drawer").hidden = true;
+    $("scrim").hidden = true;
+    document.body.style.overflow = "";
+    currentOrg = null;
+    writeHash();
+    if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+  }  function exportCSV() {
+    const cols = [
+      ["Organisation", o => o.name], ["Type", o => o.kind], ["Region", o => o.regionDetail || o.region],
+      ["Client category", o => o.segments.join("; ")], ["Proof of work", o => o.proof],
+      ["Institution-ready", o => o.institutionReady ? "Yes" : "No"], ["Projects live or delivered", o => o.shipped],
+      ["Projects logged", o => o.projects.length], ["Tier", o => o.tier], ["Engagement status", o => o.status],
+      ["Canton ecosystem roles", o => o.roles], ["Strengths", o => o.strengths], ["Credibility", o => o.credibility],
+      ["Open questions", o => o.openQuestions], ["Sources", o => o.sources.join(" ")],
+    ];
+    const q = v => `"${String(v ?? "").replace(/"/g, '""')}"`;
+    const lines = [cols.map(c => q(c[0])).join(",")].concat(filtered().map(o => cols.map(c => q(c[1](o))).join(",")));
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob(["\ufeff" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" }));
+    a.download = `canton-si-directory-${state.view}-${DATA.updated || "export"}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 0);
+  }  $("views").addEventListener("click", e => {
+    const b = e.target.closest("button[data-view]");
+    if (b) { state.view = b.dataset.view; render(); }
+  });
+  $("side-inner").addEventListener("change", e => {
+    const i = e.target;
+    if (i.name === "sort") state.sort = i.value;
+    else if (SETS.includes(i.name)) i.checked ? state[i.name].add(i.value) : state[i.name].delete(i.value);
+    else return;
+    render();
+  });
+  let t;
+  $("q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => { state.q = e.target.value; render(); }, 120); });
+  $("reset").addEventListener("click", () => {
+    Object.assign(state, { view: "all", q: "", sort: "proof" });
+    SETS.forEach(k => state[k].clear());
+    $("q").value = "";
+    render();
+  });
+  $("export").addEventListener("click", exportCSV);
+  $("nav-export").addEventListener("click", exportCSV);
+  $("filters-toggle").addEventListener("click", e => {
+    const open = $("side").classList.toggle("open");
+    e.currentTarget.setAttribute("aria-expanded", open);
+  });
+  $("results").addEventListener("click", e => {
+    const b = e.target.closest(".row");
+    if (b) openOrg(b.dataset.org, b);
+  });
+  $("close").addEventListener("click", closeOrg);
+  $("scrim").addEventListener("click", closeOrg);
+  document.addEventListener("keydown", e => {
+    if ($("drawer").hidden) return;
+    if (e.key === "Escape") closeOrg();
+    if (e.key === "Tab") {
+      const f = $("drawer").querySelectorAll("button, a[href]");
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+  $("open-legend").addEventListener("click", () => $("legend").showModal());
+  const orgFromHash = readHash();
+  $("q").value = state.q;
+  renderSummary();
+  render();
+  if (orgFromHash) openOrg(orgFromHash);
+})();
+(function () {
+  "use strict";
+  const GITHUB_REPO = "canton-network-devs/CF-SI-Dashboard";
+  const GITHUB_BRANCH = "main";
+  const STAGES = ["Local / design only", "Building", "Testnet", "Delivered demo / POC", "Live / Mainnet"];
+  const dlg = document.getElementById("add");
+  const form = document.getElementById("add-form");
+  const projects = document.getElementById("add-projects");
+  const errors = document.getElementById("add-errors");
+  const done = document.getElementById("add-done");
+  const fields = document.getElementById("add-fields");
+  const foot = document.getElementById("add-foot");
+  const existing = new Set(((window.SI_DIRECTORY || {}).orgs || []).map(o => o.name.trim().toLowerCase()));
+  const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  function addProject() {
+    const n = projects.children.length + 1;
+    const div = document.createElement("div");
+    div.className = "proj";
+    div.innerHTML = `
+      <div class="proj__top"><strong>Project ${n}</strong><button type="button" class="link" data-remove>Remove</button></div>
+      <div class="grid2">
+        <label class="f"><span>Project or client</span><input type="text" data-p="name"></label>
+        <label class="f"><span>Stage</span><select data-p="stage"><option value="">Choose</option>${STAGES.map(s => `<option>${s}</option>`).join("")}</select></label>
+        <label class="f"><span>Timeline <i>(optional)</i></span><input type="text" data-p="timeline" placeholder="Q1 2027"></label>
+        <label class="f"><span>What it is <i>(optional)</i></span><input type="text" data-p="description"></label>
+        <label class="f f--wide"><span>Notes <i>(optional)</i></span><input type="text" data-p="notes"></label>
+      </div>`;
+    projects.appendChild(div);
+  }
+  projects.addEventListener("click", e => {
+    if (!e.target.matches("[data-remove]")) return;
+    e.target.closest(".proj").remove();
+    [...projects.children].forEach((p, i) => { p.querySelector("strong").textContent = `Project ${i + 1}`; });
+  });
+  document.getElementById("add-project").addEventListener("click", addProject);
+
+  function reset() {
+    form.reset();
+    projects.innerHTML = "";
+    addProject();
+    errors.hidden = true;
+    done.hidden = true;
+    fields.hidden = false;
+    foot.hidden = false;
+  }
+  document.getElementById("open-add").addEventListener("click", () => { reset(); dlg.showModal(); form.elements.name.focus(); });
+  dlg.addEventListener("click", e => { if (e.target.matches("[data-close]")) dlg.close(); });
+
+  function collect() {
+    const f = form.elements, v = k => f[k].value.trim(), problems = [];
+    const org = { name: v("name"), kind: v("kind") };
+    if (v("typeDetail")) org.typeDetail = v("typeDetail");
+    org.region = v("region");
+    if (v("regionDetail")) org.regionDetail = v("regionDetail");
+    org.segments = [...form.querySelectorAll('input[name="segments"]:checked')].map(c => c.value);
+    if (v("segmentBasis")) org.segmentBasis = v("segmentBasis");
+    org.tier = v("tier");
+    org.status = v("status");
+    ["roles", "firstActivity", "internalStart", "strengths", "credibility", "openQuestions"].forEach(k => { if (v(k)) org[k] = v(k); });
+    org.sources = v("sources").split(/\s+/).filter(Boolean);
+    org.projects = [...projects.children].map(p => {
+      const get = k => p.querySelector(`[data-p="${k}"]`).value.trim();
+      const out = { name: get("name"), stage: get("stage") };
+      ["timeline", "description", "notes"].forEach(k => { if (get(k)) out[k] = get(k); });
+      return out;
+    }).filter(p => p.name || p.stage);
+    if (!org.name) problems.push("Add the organisation's name.");
+    else if (existing.has(org.name.toLowerCase())) problems.push(`${org.name} is already in the directory. To change it, edit orgs/${slug(org.name)}.json with a pull request.`);
+    if (!org.kind) problems.push("Choose a type.");
+    if (!org.region) problems.push("Choose a region.");
+    if (!org.tier) problems.push("Choose a tier.");
+    if (!org.status) problems.push("Add the engagement status.");
+    if (org.segments.length && !org.segmentBasis) problems.push("Say why you chose that client category.");
+    org.sources.filter(u => !u.startsWith("https://")).forEach(u => problems.push(`Source links must start with https:// (check "${u}").`));
+    org.projects.forEach((p, i) => {
+      if (!p.name) problems.push(`Project ${i + 1} needs a name.`);
+      if (!p.stage) problems.push(`Project ${i + 1} needs a stage.`);
+    });
+    return { org, problems };
+  }  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const { org, problems } = collect();
+    if (problems.length) {
+      errors.innerHTML = `Fix these first:<ul>${problems.map(p => `<li>${esc(p)}</li>`).join("")}</ul>`;
+      errors.hidden = false;
+      errors.scrollIntoView({ block: "nearest" });
+      return;
+    }
+    const file = `${slug(org.name)}.json`;
+    const json = JSON.stringify(org, null, 2) + "\n";
+    const url = `https://github.com/${GITHUB_REPO}/new/${GITHUB_BRANCH}?filename=${encodeURIComponent("orgs/" + file)}&value=${encodeURIComponent(json)}`;
+    fields.hidden = true;
+    foot.hidden = true;
+    done.innerHTML = `
+      <h3>${esc(org.name)} is ready to add</h3>
+      <ol>
+        <li>Click <strong>Open GitHub</strong>. The file <code>orgs/${esc(file)}</code> is already filled in.</li>
+        <li>Click <strong>Commit changes</strong> and confirm.</li>
+        <li>The directory updates within a minute or two.</li>
+      </ol>
+      <div class="actions">
+        <a class="btn btn--primary" href="${esc(url)}" target="_blank" rel="noopener">Open GitHub</a>
+        <button type="button" class="btn" id="add-copy">Copy the file</button>
+        <button type="button" class="link" id="add-back">Go back and edit</button>
+      </div>
+      <p class="hint">If GitHub doesn't open with the file filled in, copy it and create orgs/${esc(file)} yourself.</p>
+      <pre>${esc(json)}</pre>`;
+    done.hidden = false;
+    done.querySelector("#add-copy").addEventListener("click", ev => {
+      navigator.clipboard.writeText(json).then(() => { ev.target.textContent = "Copied"; });
+    });
+    done.querySelector("#add-back").addEventListener("click", () => { done.hidden = true; fields.hidden = false; foot.hidden = false; });
+  });
+})();
+</script>
+</body>
+</html>

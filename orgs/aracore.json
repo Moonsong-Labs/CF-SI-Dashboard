@@ -1,0 +1,24 @@
+{
+  "name": "Aracore",
+  "kind": "SI",
+  "typeDetail": "System integrator / settlement infra",
+  "region": "APAC",
+  "regionDetail": "South Korea (US subsidiary of BPMG)",
+  "segments": [
+    "Institutional"
+  ],
+  "segmentBasis": "Institutional cross-border stablecoin settlement network",
+  "tier": "Pipeline",
+  "status": "Onboarding",
+  "roles": "No public Canton activity found",
+  "strengths": "Institutional Settlement Network (ISN) for cross-border stablecoin settlement",
+  "credibility": "MOU with HashKey and Kbank (Jul 2026); earlier Kbank KRW stablecoin PoCs in Thailand and UAE; joined Global Dollar Network (Sep 2026)",
+  "openQuestions": "Onboarding plan and Canton use case scope",
+  "sources": [
+    "https://www.aracore.io/",
+    "https://group.hashkey.com/en/newsroom/hashkey-signs-strategic-mou-with-kbank-and-bpmg-to-strengthen-asia-connect-ecosystem",
+    "https://www.einpresswire.com/article/943041508/aracore-joins-global-dollar-network-accelerating-global-expansion-of-isn"
+  ],
+  "projects": [
+  ]
+}

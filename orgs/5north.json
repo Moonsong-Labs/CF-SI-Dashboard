@@ -1,0 +1,30 @@
+{
+  "name": "5North",
+  "kind": "Dev studio",
+  "typeDetail": "Dev studio / venture studio",
+  "region": "Global",
+  "regionDetail": "Global",
+  "segments": [
+    "DeFi & retail",
+    "Infrastructure & nodes"
+  ],
+  "segmentBasis": "Loop retail wallet and Lighthouse explorer; approved NaaS provider",
+  "tier": "Core",
+  "status": "Deployed on Mainnet",
+  "roles": "Super Validator; Premier Foundation member; founder Yiannis Varelas on the CF board; Loop wallet (featured app); 5N Lighthouse explorer; approved NaaS validator provider",
+  "firstActivity": "Founding-era Premier member and SV (exact start not recorded)",
+  "strengths": "Wallet UX, explorers, foundational Canton infrastructure",
+  "credibility": "Also active as an investor (listed on Ecosystem VC tab)",
+  "openQuestions": "Add named projects to the Engagement tab",
+  "sources": [
+    "https://canton.foundation/about-the-foundation/",
+    "https://www.cantonecosystem.com/"
+  ],
+  "projects": [
+    {
+      "name": "(project not named in sheet)",
+      "stage": "Live / Mainnet",
+      "notes": "Add named projects (e.g. Loop wallet, Lighthouse explorer)"
+    }
+  ]
+}

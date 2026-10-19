@@ -1,0 +1,30 @@
+{
+  "name": "Example Studio",
+  "kind": "Dev studio",
+  "typeDetail": "Dev studio",
+  "region": "APAC",
+  "regionDetail": "Singapore",
+  "segments": [
+    "Institutional"
+  ],
+  "segmentBasis": "Built a tokenized bond POC for a regional bank",
+  "tier": "Early",
+  "status": "Needs onboarding",
+  "roles": "General Foundation member",
+  "firstActivity": "Mar 2026 (joined as General member)",
+  "internalStart": "2026-03",
+  "strengths": "Daml engineering, bank integration",
+  "credibility": "Delivered core banking integrations for two regional banks (self-reported)",
+  "openQuestions": "Which network was the POC on?",
+  "sources": [
+    "https://example.com/canton"
+  ],
+  "projects": [
+    {
+      "name": "Regional bank tokenized bond POC",
+      "stage": "Delivered demo / POC",
+      "timeline": "Q2 2026",
+      "description": "Tokenized bond issuance and DvP settlement"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "LimeChain",
+  "kind": "Dev studio",
+  "typeDetail": "Dev studio",
+  "region": "Europe",
+  "regionDetail": "Europe",
+  "segments": [
+    "Institutional"
+  ],
+  "segmentBasis": "Positions its Canton practice at institutions (no tracked client yet)",
+  "tier": "Active",
+  "status": "Not engaged in sheet",
+  "roles": "Community Tech Partner Program member (answers forum developer questions); dedicated Canton development services",
+  "strengths": "Daml engineering, RWA tokenization, institutional dApps",
+  "credibility": "Long-standing Web3 engineering firm",
+  "openQuestions": "Any client builds to add?",
+  "sources": [
+    "https://limechain.tech/canton-network-development-services"
+  ],
+  "projects": []
+}

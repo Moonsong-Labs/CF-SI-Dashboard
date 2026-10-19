@@ -1,0 +1,23 @@
+{
+  "name": "Deloitte",
+  "kind": "SI",
+  "typeDetail": "System integrator (Big 4)",
+  "region": "Global",
+  "regionDetail": "Global",
+  "segments": [
+    "Institutional"
+  ],
+  "segmentBasis": "Big 4; Canton Network launch participant",
+  "tier": "Active",
+  "status": "Not engaged in sheet",
+  "roles": "Among 2023 Canton Network launch participants; listed on the Canton ecosystem site as a service provider with Daml expertise",
+  "firstActivity": "May 2023 (Canton Network launch)",
+  "strengths": "Advisory and delivery across most network utilities",
+  "credibility": "Big 4 firm",
+  "openQuestions": "Identify the current Canton practice lead",
+  "sources": [
+    "https://www.cantonecosystem.com/",
+    "https://fortune.com/crypto/2023/05/09/deloitte-goldman-sachs-microsoft-among-institutional-players-partnering-on-new-blockchain-network/"
+  ],
+  "projects": []
+}

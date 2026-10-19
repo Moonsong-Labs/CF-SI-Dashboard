@@ -1,0 +1,20 @@
+{
+  "name": "BootNode",
+  "kind": "Dev studio",
+  "typeDetail": "Dev studio",
+  "region": "Americas",
+  "regionDetail": "LATAM",
+  "segments": [
+    "Developer education"
+  ],
+  "segmentBasis": "Open Canton learning path",
+  "tier": "Early",
+  "status": "Not engaged in sheet",
+  "roles": "Published an open 'Canton Learning Path' repo on GitHub",
+  "strengths": "Developer education content",
+  "openQuestions": "Any client builds?",
+  "sources": [
+    "https://github.com/BootNodeDev/canton-learning-path"
+  ],
+  "projects": []
+}

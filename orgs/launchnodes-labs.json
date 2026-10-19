@@ -1,0 +1,48 @@
+{
+  "name": "Launchnodes Labs",
+  "kind": "Dev studio",
+  "typeDetail": "Node provider + dev studio",
+  "region": "Not recorded",
+  "segments": [
+    "Infrastructure & nodes",
+    "DeFi & retail"
+  ],
+  "segmentBasis": "White-label NaaS provider; P2P trading and vault apps in progress",
+  "tier": "Active",
+  "status": "Infra live; apps local/design",
+  "roles": "General Foundation member (logo ~Oct 2025); approved white-label, multi-tenant NaaS provider",
+  "firstActivity": "~Oct 2025 (Foundation membership, proxy)",
+  "strengths": "Node operations and staking infrastructure",
+  "credibility": "Non-custodial staking and node provider across networks",
+  "openQuestions": "Engagement row says Mainnet but its own description says apps are local; reconcile",
+  "sources": [
+    "https://www.canton.network/ecosystem/launchnodes",
+    "https://www.launchnodes.com/canton/"
+  ],
+  "projects": [
+    {
+      "name": "FlowP2P",
+      "stage": "Local / design only",
+      "description": "Peer-to-peer buying and selling of any CIP-56 token",
+      "check": "row marked Mainnet but own description says local environment, targeting DevNet/TestNet next"
+    },
+    {
+      "name": "Vault",
+      "stage": "Local / design only",
+      "description": "Infrastructure-independent multisig vault",
+      "notes": "Same conflict as FlowP2P"
+    },
+    {
+      "name": "Lido Yield",
+      "stage": "Local / design only",
+      "description": "Makes Lido staking yield available to CC holders on Canton via Chainlink",
+      "notes": "Design phase"
+    },
+    {
+      "name": "Knowledge Engine",
+      "stage": "Local / design only",
+      "description": "Incentivised quiz app to help Daml devs get started",
+      "notes": "Local environment"
+    }
+  ]
+}

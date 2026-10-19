@@ -1,0 +1,19 @@
+{
+  "name": "FP Block",
+  "kind": "Dev studio",
+  "typeDetail": "Dev studio",
+  "region": "Europe",
+  "regionDetail": "UK",
+  "segments": [],
+  "segmentBasis": "Not enough information",
+  "tier": "Early",
+  "status": "Not engaged in sheet",
+  "roles": "General Foundation member as FP Complete Corporation (logo ~May 2026)",
+  "firstActivity": "~May 2026 (Foundation membership, proxy)",
+  "strengths": "Haskell/Rust engineering lineage (FP Complete)",
+  "openQuestions": "What have they built on Canton?",
+  "sources": [
+    "https://canton.foundation/about-the-foundation/"
+  ],
+  "projects": []
+}

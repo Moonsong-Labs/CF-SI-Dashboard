@@ -1,0 +1,23 @@
+{
+  "name": "PixelPlex",
+  "kind": "Dev studio",
+  "typeDetail": "Dev studio",
+  "region": "APAC",
+  "regionDetail": "APAC (per sheet); global",
+  "segments": [
+    "DeFi & retail"
+  ],
+  "segmentBasis": "Wallets, dApp SDK and indexer (self-reported)",
+  "tier": "Active",
+  "status": "Not engaged in sheet",
+  "roles": "General Foundation member (logo ~May 2026); says it built the Loop wallet, a KYC platform, CC View indexer and Console dApp SDK; offers Daml audits",
+  "firstActivity": "~May 2026 (Foundation membership, proxy)",
+  "strengths": "Wallets, dApp SDKs, indexers, Daml audits",
+  "credibility": "17+ years in software; Clutch reviews; TON and Hedera partner",
+  "openQuestions": "Loop is listed as a 5North product; confirm PixelPlex's role (likely built it for 5North)",
+  "sources": [
+    "https://pixelplex.io/services/canton-network-exchange-development-company/",
+    "https://canton.foundation/about-the-foundation/"
+  ],
+  "projects": []
+}

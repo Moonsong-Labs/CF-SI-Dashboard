@@ -1,0 +1,41 @@
+{
+  "name": "Cantor8",
+  "kind": "Dev studio",
+  "typeDetail": "Dev studio / product builder",
+  "region": "Not recorded",
+  "segments": [
+    "DeFi & retail",
+    "Infrastructure & nodes"
+  ],
+  "segmentBasis": "C8 retail wallet, swap and vault; approved NaaS provider",
+  "tier": "Core",
+  "status": "Deployed on Mainnet",
+  "roles": "General Foundation member (logo on CF site ~Nov 2025); approved NaaS validator provider; C8 Wallet featured app",
+  "firstActivity": "~Nov 2025 (Foundation membership, proxy)",
+  "strengths": "Wallets, swap modules, vaults; Daml engineering and validator infrastructure",
+  "credibility": "Self-described 'ConsenSys of Canton' (HackerNoon profile); treat as marketing",
+  "openQuestions": "Region and team size not recorded",
+  "sources": [
+    "https://canton.foundation/about-the-foundation/",
+    "https://hackernoon.com/cantor8-building-the-future-of-canton-network"
+  ],
+  "projects": [
+    {
+      "name": "Wallet",
+      "stage": "Live / Mainnet",
+      "description": "C8 Wallet"
+    },
+    {
+      "name": "Swap",
+      "stage": "Live / Mainnet"
+    },
+    {
+      "name": "Registry",
+      "stage": "Live / Mainnet"
+    },
+    {
+      "name": "Private transfer",
+      "stage": "Live / Mainnet"
+    }
+  ]
+}

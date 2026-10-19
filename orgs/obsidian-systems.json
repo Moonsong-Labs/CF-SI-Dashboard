@@ -1,0 +1,33 @@
+{
+  "name": "Obsidian Systems",
+  "kind": "Dev studio",
+  "typeDetail": "Dev studio + node operator",
+  "region": "Americas",
+  "regionDetail": "USA / Global",
+  "segments": [
+    "Institutional",
+    "Infrastructure & nodes"
+  ],
+  "segmentBasis": "MainNet builds for DTCC and iCapital; approved NaaS provider",
+  "tier": "Core",
+  "status": "Deployed on Mainnet",
+  "roles": "Super Validator; Premier Foundation member; partner Ryan Trinkle sits on the CF board (chairs Audit & Finance); approved NaaS validator provider; Community Tech Partner Program member; Dev Fund-funded Daml 3 developer certification",
+  "firstActivity": "Founding-era Premier member and SV (exact start not recorded)",
+  "strengths": "Functional-programming depth (Daml is Haskell-based); consulting plus node hosting; developer certification",
+  "credibility": "Co-founder known for Reflex FRP; board seats at Haskell Foundation and NixOS Foundation",
+  "openQuestions": "Confirm scope and go-live dates for DTCC and iCapital work",
+  "sources": [
+    "https://canton.foundation/about-the-foundation/",
+    "https://canton.foundation/validators/"
+  ],
+  "projects": [
+    {
+      "name": "DTCC",
+      "stage": "Live / Mainnet"
+    },
+    {
+      "name": "iCapital",
+      "stage": "Live / Mainnet"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "WaveBridge",
+  "kind": "SI",
+  "typeDetail": "Regulated digital asset infra",
+  "region": "APAC",
+  "regionDetail": "South Korea",
+  "segments": [
+    "Institutional"
+  ],
+  "segmentBasis": "KoFIU-registered VASP; MOU with KB Securities and Canton Foundation",
+  "tier": "Active",
+  "status": "Building Pado",
+  "roles": "Three-way MOU with KB Securities and Canton Foundation (4 Jun 2026); CF presenting with KB Securities at WaveBridge's Bridge Seoul (1 Oct 2026)",
+  "firstActivity": "Jun 2026 (KB Securities / CF MOU)",
+  "strengths": "Institutional custody, OTC and settlement; stablecoin custody across multiple currencies",
+  "credibility": "KoFIU-registered VASP; EU VASP in Lithuania; CNBC/Statista 2026 top fintech (only Korean digital-asset pick)",
+  "openQuestions": "What is Pado, and what stage is it at?",
+  "sources": [
+    "https://www.upi.com/Top_News/World-News/2026/06/05/KB-Securities-partners-with-Canton-Foundation-Wavebridge/3531780676754/",
+    "https://www.tokenpost.com/news/business/22300",
+    "https://en.bloomingbit.io/feed/news/120809"
+  ],
+  "projects": [
+    {
+      "name": "Pado",
+      "stage": "Building"
+    }
+  ]
+}
