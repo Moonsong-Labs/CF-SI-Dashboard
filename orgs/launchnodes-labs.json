@@ -22,25 +22,25 @@
   "projects": [
     {
       "name": "FlowP2P",
-      "stage": "Local / design only",
+      "stage": "Local / Designed",
       "description": "Peer-to-peer buying and selling of any CIP-56 token",
       "check": "row marked Mainnet but own description says local environment, targeting DevNet/TestNet next"
     },
     {
       "name": "Vault",
-      "stage": "Local / design only",
+      "stage": "Local / Designed",
       "description": "Infrastructure-independent multisig vault",
       "notes": "Same conflict as FlowP2P"
     },
     {
       "name": "Lido Yield",
-      "stage": "Local / design only",
+      "stage": "Local / Designed",
       "description": "Makes Lido staking yield available to CC holders on Canton via Chainlink",
       "notes": "Design phase"
     },
     {
       "name": "Knowledge Engine",
-      "stage": "Local / design only",
+      "stage": "Local / Designed",
       "description": "Incentivised quiz app to help Daml devs get started",
       "notes": "Local environment"
     }

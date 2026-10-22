@@ -11,8 +11,7 @@ KINDS = ["SI", "Dev studio"]
 REGIONS = ["APAC", "Americas", "Europe", "MENA", "Global", "Not recorded"]
 SEGMENTS = ["Institutional", "DeFi & retail", "Infrastructure & nodes", "Developer education"]
 TIERS = ["Core", "Active", "Early", "Pipeline"]
-STAGES = ["Building", "Testnet",
-          "Delivered demo / POC", "Live / Mainnet"]
+STAGES = ["Local / Designed", "Building", "Testnet", "Delivered demo / POC", "Live / Mainnet"]
 TEXT = ["typeDetail", "regionDetail", "segmentBasis", "roles", "firstActivity", "internalStart",
         "strengths", "credibility", "openQuestions"]
 ORG_KEYS = {"name", "kind", "region", "segments", "tier", "status", "sources", "projects", "demos", *TEXT}
@@ -45,7 +44,7 @@ def check(path, o):
     ist = o.get("internalStart", "")
     if ist and not re.fullmatch(r"\d{4}-\d{2}(-\d{2})?", str(ist)):
         say("'internalStart' must look like 2026-03 or 2026-03-15")
-        demos = o.get("demos", [])
+    demos = o.get("demos", [])
     if not isinstance(demos, list) or any(not isinstance(d, str) or not d.strip() for d in demos):
         say("'demos' must be a list of short descriptions, e.g. [\"Order book infrastructure\"]")    
     srcs = o.get("sources")
