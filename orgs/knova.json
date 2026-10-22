@@ -4,13 +4,10 @@
   "typeDetail": "System integrator",
   "region": "Americas",
   "regionDetail": "USA",
-  "segments": [
-    "Institutional"
-  ],
-  "segmentBasis": "Works only with FIs and institutions (per sheet)",
+  "segments": [],
   "tier": "Pipeline",
   "status": "Not engaged in sheet",
-  "openQuestions": "Focus: FIs and institutions (no startups), per sheet",
+  "openQuestions": "Focus: FIs and institutions (no startups), per sheet; Validate delivery for large financial institutions before tagging Institutional",
   "sources": [],
   "projects": []
 }

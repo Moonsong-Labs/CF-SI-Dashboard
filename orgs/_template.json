@@ -10,6 +10,9 @@
   "segmentBasis": "Built a tokenized bond POC for a regional bank",
   "tier": "Early",
   "status": "Needs onboarding",
+  "demos": [
+    "Tokenized bond issuance and DvP settlement"
+  ],
   "roles": "General Foundation member",
   "firstActivity": "Mar 2026 (joined as General member)",
   "internalStart": "2026-03",

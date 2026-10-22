@@ -4,16 +4,13 @@
   "typeDetail": "System integrator (large)",
   "region": "APAC",
   "regionDetail": "South Korea",
-  "segments": [
-    "Institutional"
-  ],
+  "segments": ["Institutional"],
   "segmentBasis": "Large financial and public-sector SI",
   "tier": "Pipeline",
   "status": "Needs onboarding",
   "roles": "No public Canton activity found",
   "strengths": "Finance and public-sector SI at scale; AI and cloud",
   "credibility": "One of Korea's largest IT SIs; Google Cloud Partner of the Year (Korea) 2026",
-  "openQuestions": "Who is the sponsor inside LG CNS?",
   "sources": [
     "https://www.thelec.net/news/articleView.html?idxno=6763"
   ],

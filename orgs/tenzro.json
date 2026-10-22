@@ -8,7 +8,7 @@
   ],
   "segmentBasis": "AI trading and RWA apps; not a Foundation member",
   "tier": "Active",
-  "status": "2 Mainnet (per sheet)",
+  "status": "2 on MainNet (per sheet)",
   "roles": "Not found in Foundation member, SV or NaaS lists. Publishes a Canton adapter (JSON Ledger API v2), Canton MCP server, and a wallet with Canton/Daml support on its own multi-VM chain",
   "firstActivity": "Not determinable from public sources",
   "strengths": "AI agents, multi-chain settlement, Canton tooling",

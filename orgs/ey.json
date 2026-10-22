@@ -4,13 +4,11 @@
   "typeDetail": "System integrator (Big 4)",
   "region": "Global",
   "regionDetail": "Global",
-  "segments": [
-    "Institutional"
-  ],
-  "segmentBasis": "Big 4",
+  "segments": ["Institutional"],
+  "segmentBasis": "Global Big 4",
   "tier": "Pipeline",
   "status": "Not engaged in sheet",
-  "openQuestions": "Research Canton activity",
   "sources": [],
-  "projects": []
+  "projects": [],
+  "demos": []
 }

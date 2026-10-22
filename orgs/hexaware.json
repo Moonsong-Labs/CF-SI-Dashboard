@@ -4,13 +4,10 @@
   "typeDetail": "System integrator (large)",
   "region": "Global",
   "regionDetail": "Global",
-  "segments": [
-    "Institutional"
-  ],
-  "segmentBasis": "Large enterprise SI",
+  "segments": [],
   "tier": "Pipeline",
   "status": "Not engaged in sheet",
-  "openQuestions": "Research Canton activity",
+  "openQuestions": "Research Canton activity; Validate delivery for large financial institutions before tagging Institutional",
   "sources": [],
   "projects": []
 }

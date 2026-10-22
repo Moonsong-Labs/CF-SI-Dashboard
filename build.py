@@ -15,7 +15,7 @@ STAGES = ["Building", "Testnet",
           "Delivered demo / POC", "Live / Mainnet"]
 TEXT = ["typeDetail", "regionDetail", "segmentBasis", "roles", "firstActivity", "internalStart",
         "strengths", "credibility", "openQuestions"]
-ORG_KEYS = {"name", "kind", "region", "segments", "tier", "status", "sources", "projects", *TEXT}
+ORG_KEYS = {"name", "kind", "region", "segments", "tier", "status", "sources", "projects", "demos", *TEXT}
 PROJECT_KEYS = {"name", "stage", "timeline", "description", "notes", "check"}
 def slug(name):
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
@@ -45,6 +45,9 @@ def check(path, o):
     ist = o.get("internalStart", "")
     if ist and not re.fullmatch(r"\d{4}-\d{2}(-\d{2})?", str(ist)):
         say("'internalStart' must look like 2026-03 or 2026-03-15")
+        demos = o.get("demos", [])
+    if not isinstance(demos, list) or any(not isinstance(d, str) or not d.strip() for d in demos):
+        say("'demos' must be a list of short descriptions, e.g. [\"Order book infrastructure\"]")    
     srcs = o.get("sources")
     if not isinstance(srcs, list) or any(not str(u).startswith("https://") for u in srcs):
         say("'sources' must be a list of https:// links (or [])")
@@ -85,6 +88,7 @@ def load():
 def tidy(o):
     out = {k: o.get(k, "") for k in ["name", "kind", "region", "tier", "status", *TEXT]}
     out["segments"] = o.get("segments", [])
+    out["demos"] = o.get("demos", [])
     out["sources"] = o.get("sources", [])
     out["projects"] = [{k: p.get(k, "") for k in PROJECT_KEYS} for p in o.get("projects", [])]
     return out

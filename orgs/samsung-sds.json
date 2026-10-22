@@ -4,16 +4,13 @@
   "typeDetail": "System integrator (large)",
   "region": "APAC",
   "regionDetail": "South Korea",
-  "segments": [
-    "Institutional"
-  ],
+  "segments": ["Institutional"],
   "segmentBasis": "Large financial SI; KSD token securities contract",
   "tier": "Pipeline",
   "status": "Needs onboarding",
   "roles": "No public Canton activity found",
   "strengths": "Financial SI; entering digital asset and stablecoin infrastructure",
   "credibility": "Invested in Dunamu (Upbit operator) for stablecoin infra; won KSD token securities platform contract (target Feb 2027)",
-  "openQuestions": "Who is the sponsor inside Samsung SDS?",
   "sources": [
     "https://finance.biggo.com/news/9d3b06e8-0dea-44ba-9374-08a56d035488",
     "https://www.techtimes.com/articles/326919/20260907/hanwha-bets-three-blockchain-rails-own-korea-tokenized-securities.htm"

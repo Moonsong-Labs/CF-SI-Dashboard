@@ -4,13 +4,10 @@
   "typeDetail": "System integrator (Big 4)",
   "region": "Global",
   "regionDetail": "Global",
-  "segments": [
-    "Institutional"
-  ],
-  "segmentBasis": "Big 4",
+  "segments": [],
   "tier": "Pipeline",
   "status": "Not engaged in sheet",
-  "openQuestions": "Research Canton activity",
+  "openQuestions": "Research Canton activity; Validate delivery for large financial institutions before tagging Institutional",
   "sources": [],
   "projects": []
 }

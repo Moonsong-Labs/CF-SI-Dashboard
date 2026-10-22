@@ -4,16 +4,13 @@
   "typeDetail": "System integrator",
   "region": "APAC",
   "regionDetail": "Taiwan",
-  "segments": [
-    "Institutional"
-  ],
-  "segmentBasis": "Enterprise supply-chain finance and stablecoin payments",
+  "segments": [],
   "tier": "Early",
   "status": "Needs onboarding; runs a validator",
   "roles": "Listed on Canton ecosystem site as a validator (stablecoin payments, tokenization)",
   "strengths": "Supply-chain finance, stablecoin payments, RWA tokenization",
   "credibility": "Founded 2018; J.P. Morgan Quorum's first technical partner in Asia; R3 Corda venture programme; CB Insights 2021 list; clients incl. Foxconn MIH and Wistron",
-  "openQuestions": "Which network is the validator on?",
+  "openQuestions": "Which network is the validator on?; Validate delivery for large financial institutions before tagging Institutional",
   "sources": [
     "https://www.cantonecosystem.com/ecosystem/bsos",
     "https://bsos.co/",

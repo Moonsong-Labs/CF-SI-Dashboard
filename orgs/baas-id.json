@@ -4,16 +4,13 @@
   "typeDetail": "System integrator",
   "region": "APAC",
   "regionDetail": "Taiwan",
-  "segments": [
-    "Institutional"
-  ],
-  "segmentBasis": "Enterprise DID and secure storage",
+  "segments": [],
   "tier": "Pipeline",
   "status": "Needs onboarding",
   "roles": "No public Canton activity found",
   "strengths": "Decentralised identity (W3C DID) and secure storage",
   "credibility": "Subsidiary of BaaS Innovation, Taiwan's first listed blockchain company (TPEx 3555)",
-  "openQuestions": "Confirm legal entity (BaaSid vs BaaS Innovation)",
+  "openQuestions": "Confirm legal entity (BaaSid vs BaaS Innovation); Validate delivery for large financial institutions before tagging Institutional",
   "sources": [
     "https://www.fintechspace.com.tw/en/fintech_team/baas-innovation-co-ltd/",
     "https://www.taiwanarena.tech/startups-detail/BaaSidInternational/"

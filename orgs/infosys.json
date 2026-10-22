@@ -4,13 +4,11 @@
   "typeDetail": "System integrator (large)",
   "region": "Global",
   "regionDetail": "Global",
-  "segments": [
-    "Institutional"
-  ],
-  "segmentBasis": "Large enterprise SI",
+  "segments": ["Institutional"],
+  "segmentBasis": "Large financial SI",
   "tier": "Pipeline",
   "status": "Not engaged in sheet",
-  "openQuestions": "Research Canton activity",
   "sources": [],
-  "projects": []
+  "projects": [],
+  "demos": []
 }

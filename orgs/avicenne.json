@@ -4,16 +4,13 @@
   "typeDetail": "Dev studio",
   "region": "MENA",
   "regionDetail": "Middle East",
-  "segments": [
-    "Institutional"
-  ],
-  "segmentBasis": "Bank and asset manager integration, executive training (self-reported)",
+  "segments": [],
   "tier": "Early",
   "status": "Not engaged in sheet",
   "roles": "Listed on Canton ecosystem site as service provider and validator: Daml design, architecture and vendor review, bank integration, executive training",
   "strengths": "Stablecoin rails, tokenization, custody integration, due diligence",
   "credibility": "Self-reported: scaled USD0 to ~US$1.8B TVL; confidential auction with Zama (US$121M committed)",
-  "openQuestions": "Any Canton client work yet?",
+  "openQuestions": "Any Canton client work yet?; Validate delivery for large financial institutions before tagging Institutional",
   "sources": [
     "https://www.cantonecosystem.com/ecosystem/avicenne-studio"
   ],
