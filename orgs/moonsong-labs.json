@@ -1,0 +1,54 @@
+{
+  "name": "Moonsong Labs",
+  "kind": "Dev studio",
+  "typeDetail": "Dev studio + product builder",
+  "region": "Global",
+  "regionDetail": "USA / Europe / Global",
+  "segments": [
+    "Institutional",
+    "Developer education"
+  ],
+  "segmentBasis": "VaultKit institutional vault product; dpm tooling merged upstream; Community Tech Partner",
+  "tier": "Active",
+  "status": "Demos delivered; building VaultKit",
+  "roles": "General Foundation member; Community Tech Partner; Dev Fund grantee (Git-based DAR dependencies for dpm); QuickStart Uplift proposal with Digital Asset; Service Provider on the Canton Network Ecosystem",
+  "firstActivity": "Q4 2025 (public stablecoin + yield vault reference architecture)",
+  "strengths": "Daml-certified engineering, institutional vaults, developer tooling, compliance",
+  "credibility": "Shipped production systems across several ecosystems including Ethereum, Solana, ZKsync, and Polkadot (Moonbeam)",
+  "sources": [
+    "https://github.com/canton-foundation/canton-dev-fund/pull/105",
+    "https://github.com/canton-foundation/canton-dev-fund/pull/926",
+    "https://canton.foundation/about-the-foundation/",
+    "https://vaults.moonsonglabs.dev/",
+    "https://github.com/Moonsong-Labs/canton-vaults",
+    "https://moonsonglabs.com/blog/moonsong-labs-joins-canton-ecosystem-launches-institutional-readiness-guide/"
+  ],
+  "projects": [
+    {
+      "name": "VaultKit",
+      "stage": "Building",
+      "description": "Lets institutions launch and run vaults on Canton: Daml contracts, APIs, console"
+    },
+    {
+      "name": "Canton Vaults patterns",
+      "stage": "Delivered demo / POC",
+      "description": "Open-source Daml vault patterns: KYB access, pluggable fees & private logic"
+    },
+    {
+      "name": "Git-based DAR dependencies for dpm",
+      "stage": "Delivered demo / POC",
+      "description": "Dev Fund grant; merged into Digital Asset's dpm"
+    },
+    {
+      "name": "Private stablecoin",
+      "stage": "Delivered demo / POC",
+      "description": "Compliant stablecoin with private holdings, deposited into a yield vault",
+      "timeline": "Q4 2025"
+    },
+    {
+      "name": "Canton Readiness Guide",
+      "stage": "Delivered demo / POC",
+      "description": "Free guide for institutions planning a first Canton deployment"
+    }
+  ]
+}
