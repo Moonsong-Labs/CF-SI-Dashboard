@@ -344,6 +344,7 @@ dialog::backdrop { background: rgba(3, 2, 6, 0.6); -webkit-backdrop-filter: blur
       </a>
       <div class="nav__links">
         <button type="button" class="nav__link" id="open-legend">How it's measured</button>
+        <button type="button" class="nav__link" id="nav-export">Download CSV</button>        
         <a class="btn btn--sm" id="nav-report" target="_blank" rel="noopener">Report Information</a>
         <a class="btn btn--sm" id="nav-edit" target="_blank" rel="noopener">Edit Information</a>
         <button type="button" class="btn btn--primary btn--sm" id="open-add">Add Organisation</button>
@@ -759,6 +760,7 @@ window.SI_DIRECTORY = {"updated": "2026-10-22", "orgs": [{"name": "5North", "kin
     render();
   });
   $("export").addEventListener("click", exportCSV);
+  $("nav-export").addEventListener("click", exportCSV);
   $("filters-toggle").addEventListener("click", e => {
     const open = $("side").classList.toggle("open");
     e.currentTarget.setAttribute("aria-expanded", open);
