@@ -11,6 +11,9 @@
   "segmentBasis": "VaultKit institutional vault product; dpm tooling merged upstream; Community Tech Partner",
   "tier": "Active",
   "status": "Demos delivered; building VaultKit",
+  "demos": [
+    "Institutional vaults"
+  ],
   "roles": "General Foundation member; Community Tech Partner; Dev Fund grantee (Git-based DAR dependencies for dpm); QuickStart Uplift proposal with Digital Asset; Service Provider on the Canton Network Ecosystem",
   "firstActivity": "Q4 2025 (public stablecoin + yield vault reference architecture)",
   "strengths": "Daml-certified engineering, institutional vaults, developer tooling, compliance",
