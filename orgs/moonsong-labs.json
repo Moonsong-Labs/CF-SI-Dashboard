@@ -22,7 +22,7 @@
     "https://github.com/canton-foundation/canton-dev-fund/pull/105",
     "https://github.com/canton-foundation/canton-dev-fund/pull/926",
     "https://canton.foundation/about-the-foundation/",
-    "https://vaults.moonsonglabs.dev/",
+    "https://vaults.moonsonglabs.dev/demo",
     "https://github.com/Moonsong-Labs/canton-vaults",
     "https://moonsonglabs.com/blog/moonsong-labs-joins-canton-ecosystem-launches-institutional-readiness-guide/"
   ],
@@ -33,24 +33,27 @@
       "description": "Lets institutions launch and run vaults on Canton: Daml contracts, APIs, console"
     },
     {
-      "name": "Canton Vaults patterns",
+      "name": "Canton Vaults Patterns",
       "stage": "Delivered demo / POC",
+      "timeline": "Sep 2026",
       "description": "Open-source Daml vault patterns: KYB access, pluggable fees & private logic"
     },
     {
-      "name": "Git-based DAR dependencies for dpm",
+      "name": "Git-Based DAR Dependencies for dpm",
       "stage": "Delivered demo / POC",
+      "timeline": "Oct 2026",
       "description": "Dev Fund grant; merged into Digital Asset's dpm"
     },
     {
-      "name": "Private stablecoin",
+      "name": "Private Stablecoin",
       "stage": "Delivered demo / POC",
-      "description": "Compliant stablecoin with private holdings, deposited into a yield vault",
-      "timeline": "Q4 2025"
+      "timeline": "Q4 2025",
+      "description": "Compliant stablecoin with private holdings, deposited into a yield vault"
     },
     {
       "name": "Canton Readiness Guide",
       "stage": "Delivered demo / POC",
+      "timeline": "Jun 2026",
       "description": "Free guide for institutions planning a first Canton deployment"
     }
   ]
